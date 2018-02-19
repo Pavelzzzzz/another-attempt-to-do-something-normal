@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS tblAPLNews (
+  `NewsId` INT NOT NULL AUTO_INCREMENT,
+  `TitleTranslationId` INT NOT NULL,
+  `XMLArchitecture` MEDIUMTEXT NOT NULL,
+  PRIMARY KEY (`NewsId`),
+  UNIQUE INDEX `NewsId_UNIQUE` (`NewsId` ASC));
