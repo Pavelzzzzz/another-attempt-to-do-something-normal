@@ -67,8 +67,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>com.googlecode.flyway</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+
+				<configuration>
+					<user>root</user>
+					<password>000</password>
+
+					<driver>com.mysql.jdbc.Driver</driver>
+					<url>jdbc:mysql://localhost:3306/news_blog?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=UTF-8</url>
+				</configuration>
+
+			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
