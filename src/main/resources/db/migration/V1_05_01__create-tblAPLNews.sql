@@ -1,6 +1,9 @@
 CREATE TABLE IF NOT EXISTS tblAPLNews (
   `NewsId` INT NOT NULL AUTO_INCREMENT,
   `CategoryId` INT NOT NULL,
+  `CreatedAt` DATETIME NOT NULL,
+  `UpdatedAt` DATETIME NOT NULL,
+  `CreatedBy` INT NOT NULL,
   `TitleTranslationId` INT NOT NULL,
   `XMLArchitecture` MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`NewsId`),
