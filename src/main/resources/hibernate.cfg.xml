@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/news_blog</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblAplCategoryEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblAplNewsEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblDesTextTranslationEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblDesTileTranslationEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSecPasswordEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSecRoleEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSecUserEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSecUserRoleEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSerLanguageEntity"/>
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
