@@ -1,16 +1,15 @@
-package com.pavelzzzzz.another_attempt_to_do_something_normal.domain;
+package com.pavelzzzzz.another_attempt_to_do_something_normal.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "tblSECUserRole", schema = "news_blog", catalog = "")
-@IdClass(TblSecUserRoleEntityPK.class)
-public class TblSecUserRoleEntity {
+public class TblSecUserRoleEntityPK implements Serializable {
     private int userId;
     private int roleId;
 
-    @Id
     @Column(name = "UserId")
+    @Id
     public int getUserId() {
         return userId;
     }
@@ -19,8 +18,8 @@ public class TblSecUserRoleEntity {
         this.userId = userId;
     }
 
-    @Id
     @Column(name = "RoleId")
+    @Id
     public int getRoleId() {
         return roleId;
     }
@@ -34,7 +33,7 @@ public class TblSecUserRoleEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TblSecUserRoleEntity that = (TblSecUserRoleEntity) o;
+        TblSecUserRoleEntityPK that = (TblSecUserRoleEntityPK) o;
 
         if (userId != that.userId) return false;
         if (roleId != that.roleId) return false;

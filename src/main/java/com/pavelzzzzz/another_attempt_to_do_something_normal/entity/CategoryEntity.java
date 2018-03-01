@@ -1,10 +1,10 @@
-package com.pavelzzzzz.another_attempt_to_do_something_normal.domain;
+package com.pavelzzzzz.another_attempt_to_do_something_normal.entity;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "tblAPLCategory", schema = "news_blog", catalog = "")
-public class TblAplCategoryEntity {
+public class CategoryEntity {
     private int categoryId;
     private String categoryName;
 
@@ -33,7 +33,7 @@ public class TblAplCategoryEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TblAplCategoryEntity that = (TblAplCategoryEntity) o;
+        CategoryEntity that = (CategoryEntity) o;
 
         if (categoryId != that.categoryId) return false;
         if (categoryName != null ? !categoryName.equals(that.categoryName) : that.categoryName != null) return false;

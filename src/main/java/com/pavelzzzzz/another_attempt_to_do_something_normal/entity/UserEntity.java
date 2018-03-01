@@ -1,17 +1,30 @@
-package com.pavelzzzzz.another_attempt_to_do_something_normal.domain;
+package com.pavelzzzzz.another_attempt_to_do_something_normal.entity;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "tblSECUser", schema = "news_blog", catalog = "")
-public class TblSecUserEntity {
-    private int userId;
-    private String username;
-    private String email;
-    private byte isActive;
+public class UserEntity {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "UserId")
+    private int userId;
+
+    @NotBlank
+    @Column(name = "Username")
+    private String username;
+
+    @NotBlank
+    @Column(name = "Email")
+    private String email;
+
+    @NotBlank
+    @Column(name = "IsActive")
+    private byte isActive;
+
     public int getUserId() {
         return userId;
     }
@@ -20,8 +33,6 @@ public class TblSecUserEntity {
         this.userId = userId;
     }
 
-    @Basic
-    @Column(name = "Username")
     public String getUsername() {
         return username;
     }
@@ -30,8 +41,6 @@ public class TblSecUserEntity {
         this.username = username;
     }
 
-    @Basic
-    @Column(name = "Email")
     public String getEmail() {
         return email;
     }
@@ -40,8 +49,6 @@ public class TblSecUserEntity {
         this.email = email;
     }
 
-    @Basic
-    @Column(name = "IsActive")
     public byte getIsActive() {
         return isActive;
     }
@@ -55,7 +62,7 @@ public class TblSecUserEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TblSecUserEntity that = (TblSecUserEntity) o;
+        UserEntity that = (UserEntity) o;
 
         if (userId != that.userId) return false;
         if (isActive != that.isActive) return false;

@@ -6,15 +6,15 @@
   <session-factory>
     <property name="connection.url">jdbc:mysql://localhost:3306/news_blog</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblAplCategoryEntity"/>
-    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblAplNewsEntity"/>
-    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblDesTextTranslationEntity"/>
-    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblDesTileTranslationEntity"/>
-    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSecPasswordEntity"/>
-    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSecRoleEntity"/>
-    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSecUserEntity"/>
-    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSecUserRoleEntity"/>
-    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.domain.TblSerLanguageEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.entity.CategoryEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.entity.NewsEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.entity.TblDesTextTranslationEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.entity.TblDesTileTranslationEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.entity.TblSecPasswordEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.entity.TblSecRoleEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.entity.UserEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.entity.TblSecUserRoleEntity"/>
+    <mapping class="com.pavelzzzzz.another_attempt_to_do_something_normal.entity.TblSerLanguageEntity"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

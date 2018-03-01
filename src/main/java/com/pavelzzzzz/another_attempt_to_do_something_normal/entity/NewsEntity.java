@@ -1,11 +1,11 @@
-package com.pavelzzzzz.another_attempt_to_do_something_normal.domain;
+package com.pavelzzzzz.another_attempt_to_do_something_normal.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "tblAPLNews", schema = "news_blog", catalog = "")
-public class TblAplNewsEntity {
+public class NewsEntity {
     private int newsId;
     private Timestamp createdAt;
     private Timestamp updatedAt;
@@ -67,7 +67,7 @@ public class TblAplNewsEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TblAplNewsEntity that = (TblAplNewsEntity) o;
+        NewsEntity that = (NewsEntity) o;
 
         if (newsId != that.newsId) return false;
         if (createdBy != that.createdBy) return false;
