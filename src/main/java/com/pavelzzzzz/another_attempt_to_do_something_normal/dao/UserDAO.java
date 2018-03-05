@@ -12,7 +12,7 @@ import javax.persistence.EntityManager;
 public class UserDAO implements IUserDAO {
 
     @PersistenceContext
-    private EntityMancager entityManager;
+    private EntityManager entityManager;
 
     @Override
     public UserEntity getUserById(int userId) {
