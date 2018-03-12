@@ -5,24 +5,20 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tblSECUser", schema = "news_blog", catalog = "")
+@Table(name = "tbl_sec_user")
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "UserId")
     private int userId;
 
     @NotBlank
-    @Column(name = "Username")
     private String username;
 
     @NotBlank
-    @Column(name = "Email")
     private String email;
 
     @NotBlank
-    @Column(name = "IsActive")
     private byte isActive;
 
     public int getUserId() {

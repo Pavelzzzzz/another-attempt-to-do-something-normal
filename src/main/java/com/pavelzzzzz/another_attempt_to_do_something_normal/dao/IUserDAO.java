@@ -1,13 +1,13 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.dao;
 
 import com.pavelzzzzz.another_attempt_to_do_something_normal.entity.UserEntity;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface IUserDAO {
-    UserEntity getUserById(int userId);
+import javax.transaction.Transactional;
 
-    void addUser(UserEntity userEntity);
-
-    void updateUser(UserEntity userEntity);
-
-    void deleteUser(int userId);
+@Repository
+@Transactional
+public interface IUserDAO extends CrudRepository<UserEntity, Integer> {
+    UserEntity getUserByUserId(int userId);
 }

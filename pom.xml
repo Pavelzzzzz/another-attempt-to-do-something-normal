@@ -16,7 +16,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.10.RELEASE</version>
+		<version>1.4.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -43,10 +43,10 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.flywaydb</groupId>-->
+			<!--<artifactId>flyway-core</artifactId>-->
+		<!--</dependency>-->
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -80,19 +80,19 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-			<plugin>
-				<groupId>com.googlecode.flyway</groupId>
-				<artifactId>flyway-maven-plugin</artifactId>
+			<!--<plugin>-->
+				<!--<groupId>com.googlecode.flyway</groupId>-->
+				<!--<artifactId>flyway-maven-plugin</artifactId>-->
 
-				<configuration>
-					<user>root</user>
-					<password>000</password>
+				<!--<configuration>-->
+					<!--<user>root</user>-->
+					<!--<password>000</password>-->
 
-					<driver>com.mysql.jdbc.Driver</driver>
-					<url>jdbc:mysql://localhost:3306/news_blog?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=UTF-8</url>
-				</configuration>
+					<!--<driver>com.mysql.jdbc.Driver</driver>-->
+					<!--<url>jdbc:mysql://localhost:3306/news_blog?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=UTF-8</url>-->
+				<!--</configuration>-->
 
-			</plugin>
+			<!--</plugin>-->
 		</plugins>
 	</build>
 </project>
