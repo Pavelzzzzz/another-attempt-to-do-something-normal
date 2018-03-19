@@ -1,10 +1,11 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.service;
 
 import com.pavelzzzzz.another_attempt_to_do_something_normal.dao.IUserDAO;
-import com.pavelzzzzz.another_attempt_to_do_something_normal.entity.TblSECUserEntity;
-import java.util.List;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService implements IUserService {
@@ -13,14 +14,14 @@ public class UserService implements IUserService {
     private IUserDAO userDAO;
 
     @Override
-    public List<TblSECUserEntity> getAllUser() {
-        return (List<TblSECUserEntity>) userDAO.findAll();
+    public List<UserEntity> getAllUser() {
+        return (List<UserEntity>) userDAO.findAll();
     }
 
     @Override
-    public TblSECUserEntity getUserById(int userId) {
-        TblSECUserEntity tblSECUserEntity = userDAO.getUserByUserId(userId);
-        return tblSECUserEntity;
+    public UserEntity getUserById(int userId) {
+        UserEntity obj = userDAO.getUserByUserId(userId);
+        return obj;
     }
 
 //    @Override

@@ -1,0 +1,16 @@
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/controller/UserController.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/NewsEntity.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/TblSerLanguageEntity.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/dao/IUserDAO.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/AnotherAttemptToDoSomethingNormalApplication.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/service/IUserService.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/TblDesTextTranslationEntity.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/service/UserService.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/TblSecUserRoleEntityPK.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/UserEntity.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/TblDesTileTranslationEntity.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/CategoryEntity.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/TblSecRoleEntity.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/TblSecUserRoleEntity.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/entity/TblSecPasswordEntity.java
+/home/pavel/java/workspase/another-attempt-to-do-something-normal-spring-boot/src/main/java/com/pavelzzzzz/another_attempt_to_do_something_normal/dao/UserDAO.java
