@@ -20,8 +20,8 @@ public class UserService implements IUserService {
 
     @Override
     public UserEntity getUserById(int userId) {
-        UserEntity obj = userDAO.getUserByUserId(userId);
-        return obj;
+        UserEntity userEntity = userDAO.getUserByUserId(userId);
+        return userEntity;
     }
 
 //    @Override
