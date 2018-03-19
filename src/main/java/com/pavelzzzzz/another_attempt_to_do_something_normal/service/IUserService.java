@@ -1,14 +1,13 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.service;
 
-import com.pavelzzzzz.another_attempt_to_do_something_normal.entity.UserEntity;
-
+import com.pavelzzzzz.another_attempt_to_do_something_normal.entity.TblSECUserEntity;
 import java.util.List;
 
 public interface IUserService {
 
-    List<UserEntity> getAllUser();
+    List<TblSECUserEntity> getAllUser();
 
-    UserEntity getUserById(int userId);
+    TblSECUserEntity getUserById(int userId);
 
 //    boolean addUser(UserEntity user);
 //
