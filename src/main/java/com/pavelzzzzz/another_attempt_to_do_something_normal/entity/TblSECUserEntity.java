@@ -50,7 +50,7 @@ public class TblSECUserEntity implements UserDetails {
 
     @Override
     public String getPassword() {
-        return tblSECPasswordEntity.getPassword();
+         return tblSECPasswordEntity.getPassword();
     }
 
     @Override

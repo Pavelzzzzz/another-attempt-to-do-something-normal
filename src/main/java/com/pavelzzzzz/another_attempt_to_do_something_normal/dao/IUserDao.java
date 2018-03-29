@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Transactional
 public interface IUserDao extends CrudRepository<TblSECUserEntity, Integer> {
     TblSECUserEntity getUserByUserId(int userId);
-    TblSECUserEntity getUserByUserUsername(String username);
+    TblSECUserEntity getUserByUsername(String username);
 }
