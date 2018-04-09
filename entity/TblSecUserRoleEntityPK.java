@@ -1,4 +1,4 @@
-package com.pavelzzzzz.another_attempt_to_do_something_normal.entity;
+package com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
