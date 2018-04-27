@@ -1,15 +1,14 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.controller;
 
-import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblSECUserEntityDao;
-import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblSECUserEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.IUserService;
-import java.util.List;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User;
+import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.querydsl.binding.QuerydslPredicate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -17,18 +16,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     @Autowired
-    private TblSECUserEntityDao tblSECUserEntityDao;
+    private IUserService userService;
+
+    @GetMapping("/")
+    public ResponseEntity<?> listCars(
+            @QuerydslPredicate(root = User.class) Predicate predicate, Pageable pageable) {
+        return ResponseEntity.ok(userService.getAllUser(predicate, pageable));
+    }
 
 //    @GetMapping("/")
 //    public ResponseEntity<List<TblSECUserEntity>> getAllUser() {
 //        return new ResponseEntity<List<TblSECUserEntity>>(userService.getAllUser(), HttpStatus.OK);
 //    }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<TblSECUserEntity> getUserById(@PathVariable("id") Integer id) {
-        TblSECUserEntity userEntity = tblSECUserEntityDao.getUserByUserId(id);
-        return new ResponseEntity<TblSECUserEntity>(userEntity, HttpStatus.OK);
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<TblSECUserEntity> getUserById(@PathVariable("id") Integer id) {
+//        TblSECUserEntity userEntity = tblSECUserEntityDao.getUserByUserId(id);
+//        return new ResponseEntity<TblSECUserEntity>(userEntity, HttpStatus.OK);
+//    }
 
 //    @PostMapping("/")
 //    public ResponseEntity<Void> addUser(@RequestBody String login,

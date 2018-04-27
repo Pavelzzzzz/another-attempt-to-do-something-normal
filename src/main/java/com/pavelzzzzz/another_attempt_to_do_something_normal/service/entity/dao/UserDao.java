@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public interface UserDao {
 
-  User toEntity (@NotBlank TblSECUserEntity tblSECUserEntity);
+  User toEntity(@NotBlank TblSECUserEntity tblSECUserEntity);
 
 //  TblSECUserEntity fromEntity (User user);
 

@@ -1,27 +1,32 @@
-package com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity;
+package com.pavelzzzzz.another_attempt_to_do_something_normal.security.entity;
+
+import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.Role;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-public class User {
+public class UserSecurity implements UserDetails {
 
   private int userId;
   private String username;
   private String email;
+  private String password;
   private Collection<Role> authorities;
   private boolean enabled;
   private boolean accountNonExpired;
   private boolean accountNonLocked;
   private boolean credentialsNonExpired;
 
-  public User() {
+  public UserSecurity() {
   }
 
-  public User(int userId, String username, String email,
-              Collection<Role> authorities, boolean enabled, boolean accountNonExpired,
-              boolean accountNonLocked, boolean credentialsNonExpired) {
+  public UserSecurity(int userId, String username, String email, String password,
+                      Collection<Role> authorities, boolean enabled, boolean accountNonExpired,
+                      boolean accountNonLocked, boolean credentialsNonExpired) {
     this.userId = userId;
     this.username = username;
     this.email = email;
+    this.password = password;
     this.authorities = authorities;
     this.enabled = enabled;
     this.accountNonExpired = accountNonExpired;
@@ -37,6 +42,7 @@ public class User {
     this.userId = userId;
   }
 
+  @Override
   public String getUsername() {
     return username;
   }
@@ -53,14 +59,26 @@ public class User {
     this.email = email;
   }
 
+  @Override
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  @Override
   public Collection<Role> getAuthorities() {
     return authorities;
   }
 
-  public void setAuthorities(Collection<Role> authorities) {
+  public void setAuthorities(
+      Collection<Role> authorities) {
     this.authorities = authorities;
   }
 
+  @Override
   public boolean isEnabled() {
     return enabled;
   }
@@ -69,6 +87,7 @@ public class User {
     this.enabled = enabled;
   }
 
+  @Override
   public boolean isAccountNonExpired() {
     return accountNonExpired;
   }
@@ -77,6 +96,7 @@ public class User {
     this.accountNonExpired = accountNonExpired;
   }
 
+  @Override
   public boolean isAccountNonLocked() {
     return accountNonLocked;
   }
@@ -85,6 +105,7 @@ public class User {
     this.accountNonLocked = accountNonLocked;
   }
 
+  @Override
   public boolean isCredentialsNonExpired() {
     return credentialsNonExpired;
   }
@@ -92,4 +113,6 @@ public class User {
   public void setCredentialsNonExpired(boolean credentialsNonExpired) {
     this.credentialsNonExpired = credentialsNonExpired;
   }
+
+
 }

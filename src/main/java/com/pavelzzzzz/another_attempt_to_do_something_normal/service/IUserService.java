@@ -1,13 +1,15 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.service;
 
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User;
-import java.util.Set;
+import com.querydsl.core.types.Predicate;
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.data.domain.Pageable;
 
-public interface IUserService extends UserDetailsService {
+import java.util.Set;
 
-    Set<User> getAllUser();
+public interface IUserService {
+
+    Set<User> getAllUser(Predicate predicate, Pageable pageable);
 
     User getUserByUserId(@NotBlank int userId);
 
