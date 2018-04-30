@@ -1,3 +1,6 @@
 INSERT INTO tblSECUser (`Username`, `Email`, `Enabled`)
-    VALUES ('user', 'user@mail.ru', '1');
+    VALUES ('admin', 'admin@gmail.com', '1');
+
+INSERT INTO tblSECUser (`Username`, `Email`, `Enabled`)
+VALUES ('user', 'user@gmail.com', '2');
 

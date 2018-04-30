@@ -1,5 +1,6 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.controller;
 
+import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblSECUserEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.IUserService;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User;
 import com.querydsl.core.types.Predicate;
@@ -12,15 +13,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(path = "/user")
+@RequestMapping(path = "api/users")
 public class UserController {
 
     @Autowired
     private IUserService userService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<?> listCars(
-            @QuerydslPredicate(root = User.class) Predicate predicate, Pageable pageable) {
+            @QuerydslPredicate(root = TblSECUserEntity.class) Predicate predicate, Pageable pageable) {
         return ResponseEntity.ok(userService.getAllUser(predicate, pageable));
     }
 

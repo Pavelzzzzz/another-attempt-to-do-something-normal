@@ -10,8 +10,9 @@ public class MainController {
 
     @RequestMapping("/")
     public String getMainPage() {
-        return "home";
+        return "index";
     }
+
 
     @RequestMapping("/login")
     public String getLogin(@RequestParam(value = "error", required = false) String error,
@@ -20,5 +21,10 @@ public class MainController {
         model.addAttribute("error", error != null);
         model.addAttribute("logout", logout != null);
         return "login";
+    }
+
+    @RequestMapping("/demo")
+    public String getDemoPage(){
+        return "demo";
     }
 }
