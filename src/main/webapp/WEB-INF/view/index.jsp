@@ -19,21 +19,7 @@
 					<div class="t-left" style="background: #fff; box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3); margin:20px;">
 						<div class="row" >
 							<div class="item-info">
-								<table id="tableOfUsers">
-									<thead>
-									<tr class="t-center">
-										<th class=" filterable sortable table-sortable:numeric"
-											onclick="set_data_and_load('username', '')">
-											Username</th>
-										<th class=" filterable sortable table-sortable:numeric"
-											onclick="set_data_and_load('email', '')">
-											Email</th>
-										<th class=" filterable sortable table-sortable:numeric"
-											onclick="set_data_and_load('enabled', '')">
-											Enabled</th>
-									</tr>
-									</thead>
-								</table>
+
 							</div>
 						</div>
 					</div>

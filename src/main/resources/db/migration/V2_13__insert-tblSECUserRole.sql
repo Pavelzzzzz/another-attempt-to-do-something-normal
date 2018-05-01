@@ -4,3 +4,6 @@ INSERT INTO tblSECUserRole (`UserId`, `RoleId`)
 INSERT INTO tblSECUserRole (`UserId`, `RoleId`)
 VALUES ('2', '2');
 
+INSERT INTO tblSECUserRole (`UserId`, `RoleId`)
+VALUES ('3', '2');
+

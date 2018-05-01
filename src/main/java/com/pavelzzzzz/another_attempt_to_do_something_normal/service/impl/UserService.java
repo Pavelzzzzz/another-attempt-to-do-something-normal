@@ -6,12 +6,11 @@ import com.pavelzzzzz.another_attempt_to_do_something_normal.service.IUserServic
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.UserDao;
 import com.querydsl.core.types.Predicate;
+import java.util.LinkedList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Service
 public class UserService implements IUserService {
@@ -22,8 +21,8 @@ public class UserService implements IUserService {
     private UserDao userDao;
 
     @Override
-    public Set<User> getAllUser(Predicate predicate, Pageable pageable) {
-        Set<User> users = new HashSet<User>();
+    public List<User> getAllUser(Predicate predicate, Pageable pageable) {
+        List<User> users = new LinkedList<>();
         for(TblSECUserEntity tblSECUserEntity:
             tblSECUserEntityDao.findAll(predicate, pageable)){
             users.add(userDao.toEntity(tblSECUserEntity));
