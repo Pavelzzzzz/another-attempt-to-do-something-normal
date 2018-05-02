@@ -12,7 +12,7 @@
     
 		<!-- CSS
   ================================================== -->
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="/css/style.css">
 
 	</head>
 	<body>
@@ -24,12 +24,13 @@
 				<div class="row">
 					<div id="cssmenu">
 						<ul>
-							<li class='active'><a href="users.jsp">Home</a></li>
+							<li class='active'><a href="/">Home</a></li>
+							<li class='active'><a href="administration/users">Users</a></li>
 							<li><a href="single.html">About</a></li>
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
-					<a href='users.jsp' class="logo"><img src="images/logo.png" /></a>
+					<a href='administration/users.jsp' class="logo"><img src="/images/logo2.png" /></a>
 				</div>
 			</div>
 
@@ -37,8 +38,8 @@
 
 	</div>
 
-	<script src="js/jquery-latest.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="/js/jquery-latest.min.js"></script>
+	<script src="/js/script.js"></script>
 
 	</body>
 

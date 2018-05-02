@@ -4,7 +4,7 @@ function set_data_and_load(param, order) {
   clearTable($("#tableOfUsers")[0]);
   var dataForLoad = {};
   dataForLoad["page"] = 0;
-  dataForLoad["size"] = 5;
+  dataForLoad["size"] = 2;
   dataForLoad[param + "%" + order] = null;
   sessionStorage.setItem("dataForLoad", JSON.stringify(dataForLoad));
   get_users()
@@ -22,7 +22,7 @@ function get_users() {
 
   $.ajax({
     type: "GET",
-    url: "api/users",
+    url: "/api/administration/users",
     data: JSON.parse(sessionStorage.getItem("dataForLoad")),
     dataType: 'json',
     success: function (data) {

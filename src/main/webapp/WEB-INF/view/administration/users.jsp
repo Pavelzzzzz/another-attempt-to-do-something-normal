@@ -3,7 +3,7 @@
 	<head>
 		<title>Users</title>
 
-		<jsp:include page="header.jsp" />
+		<jsp:include page="../header.jsp" />
 	</head>
 
 	<body>
@@ -43,10 +43,10 @@
 	</section>
 
 	<button style="display: block;  margin: 0 auto;" onclick="load_new_page()">
-		<img src="images/arrow_down_40.png">
+		<img src="/images/arrow_down_40.png">
 	</button>
 
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="../footer.jsp" />
 
 	<script src="/js/users.js"></script>
 

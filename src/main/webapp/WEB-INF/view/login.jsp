@@ -11,7 +11,6 @@
 
     <title>Log in with your account</title>
 
-    <jsp:include page="header.jsp" />
 </head>
 
 <body>
@@ -36,7 +35,6 @@
 
 </div>
 
-<jsp:include page="footer.jsp" />
 </body>
 </html>
 
