@@ -30,7 +30,7 @@
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
-					<a href='administration/users.jsp' class="logo"><img src="/images/logo2.png" /></a>
+					<a href='administration/users.jsp' class="logo"><img src="/images/logo.png" /></a>
 				</div>
 			</div>
 
