@@ -2,7 +2,7 @@ package com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao
 
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblSECUserEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User;
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 
 public interface UserDao {
 

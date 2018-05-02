@@ -5,9 +5,9 @@ function set_data_and_load(param, order) {
   var dataForLoad = {};
   dataForLoad["page"] = 0;
   dataForLoad["size"] = 2;
-  dataForLoad[param + "%" + order] = null;
+  dataForLoad["sort"] = [param, order];
   sessionStorage.setItem("dataForLoad", JSON.stringify(dataForLoad));
-  get_users()
+  get_users();
 }
 
 function load_new_page() {

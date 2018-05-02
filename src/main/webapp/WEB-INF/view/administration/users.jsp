@@ -48,7 +48,7 @@
 
 	<jsp:include page="../footer.jsp" />
 
-	<script src="/js/users.js"></script>
+	<script src="/js/administration/users.js"></script>
 
 	</body>
 </html>

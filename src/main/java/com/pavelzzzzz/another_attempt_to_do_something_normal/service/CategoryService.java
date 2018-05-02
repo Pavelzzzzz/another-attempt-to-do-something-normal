@@ -1,16 +1,16 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.service;
 
-import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.Category;
 import com.querydsl.core.types.Predicate;
 import java.util.List;
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 import org.springframework.data.domain.Pageable;
 
-public interface IUserService {
+public interface CategoryService {
 
-    List<User> getAllUser(Predicate predicate, Pageable pageable);
+    List<Category> getAllCategories(Predicate predicate, Pageable pageable);
 
-    User getUserByUserId(@NotBlank int userId);
+    Category getCategoryByCategoryId(@NotBlank int categoryId);
 
 //    boolean addUser(UserEntity user);
 //

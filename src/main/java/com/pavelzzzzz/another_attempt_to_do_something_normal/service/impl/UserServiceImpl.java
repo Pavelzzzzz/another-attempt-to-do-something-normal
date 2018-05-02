@@ -2,7 +2,7 @@ package com.pavelzzzzz.another_attempt_to_do_something_normal.service.impl;
 
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblSECUserEntityDao;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblSECUserEntity;
-import com.pavelzzzzz.another_attempt_to_do_something_normal.service.IUserService;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.service.UserService;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.UserDao;
 import com.querydsl.core.types.Predicate;
@@ -13,7 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService implements IUserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private TblSECUserEntityDao tblSECUserEntityDao;
@@ -21,7 +21,7 @@ public class UserService implements IUserService {
     private UserDao userDao;
 
     @Override
-    public List<User> getAllUser(Predicate predicate, Pageable pageable) {
+    public List<User> getAllUsers(Predicate predicate, Pageable pageable) {
         List<User> users = new LinkedList<>();
         for(TblSECUserEntity tblSECUserEntity:
             tblSECUserEntityDao.findAll(predicate, pageable)){
