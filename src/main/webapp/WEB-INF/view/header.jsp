@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <html lang="en"> 
 	<head>
 
@@ -25,12 +27,14 @@
 					<div id="cssmenu">
 						<ul>
 							<li class='active'><a href="/">Home</a></li>
-							<li class='active'><a href="administration/users">Users</a></li>
+							<sec:authorize access="hasRole('Admin')">
+								<li class='active'><a href="administration/users">Users</a></li>
+							</sec:authorize>
 							<li><a href="single.html">About</a></li>
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
-					<a href='administration/users.jsp' class="logo"><img src="/images/logo.png" /></a>
+					<a href='/' class="logo"><img src="/images/logo.png" /></a>
 				</div>
 			</div>
 
