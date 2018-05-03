@@ -11,10 +11,4 @@ public interface CategoryService {
     List<Category> getAllCategories(Predicate predicate, Pageable pageable);
 
     Category getCategoryByCategoryId(@NotBlank int categoryId);
-
-//    boolean addUser(UserEntity user);
-//
-//    void updateUser(UserEntity userEntity);
-//
-//    void deleteUser(int userId);
 }

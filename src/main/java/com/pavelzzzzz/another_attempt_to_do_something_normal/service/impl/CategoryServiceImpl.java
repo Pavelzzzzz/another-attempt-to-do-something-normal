@@ -1,15 +1,10 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.service.impl;
 
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblAPICategoryEntityDao;
-import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblSECUserEntityDao;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblAPICategoryEntity;
-import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblSECUserEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.CategoryService;
-import com.pavelzzzzz.another_attempt_to_do_something_normal.service.UserService;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.Category;
-import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.CategoryDao;
-import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.UserDao;
 import com.querydsl.core.types.Predicate;
 import java.util.LinkedList;
 import java.util.List;
@@ -33,7 +28,7 @@ public class CategoryServiceImpl implements CategoryService {
             tblAPICategoryEntityDao.findAll(predicate, pageable)){
             categories.add(categoryDao.toEntity(tblAPICategoryEntity));
         }
-        return null;
+        return categories;
     }
 
     @Override
