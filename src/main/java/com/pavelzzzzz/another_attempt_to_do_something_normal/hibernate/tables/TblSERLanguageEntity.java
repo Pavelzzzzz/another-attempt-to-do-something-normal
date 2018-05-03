@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "tblSERLanguage", schema = "news_blog", catalog = "")
+@Table(name = "tblSERLanguage", schema = "news_blog")
 public class TblSERLanguageEntity {
 
     @Id

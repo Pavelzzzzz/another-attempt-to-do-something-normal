@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "tblSECRole")
+@Table(name = "tblSECRole", schema = "news_blog")
 public class TblSECRoleEntity{
 
     @Id

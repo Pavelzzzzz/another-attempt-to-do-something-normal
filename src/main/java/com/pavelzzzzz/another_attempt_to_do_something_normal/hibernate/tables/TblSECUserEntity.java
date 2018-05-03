@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "tblSECUser")
+@Table(name = "tblSECUser", schema = "news_blog")
 public class TblSECUserEntity{
 
     @Id
@@ -26,9 +26,9 @@ public class TblSECUserEntity{
     private String email;
     @NotBlank
     private boolean enabled;
-    @OneToOne(mappedBy = "tblSECUserEntity", fetch = FetchType.EAGER)
+    @OneToOne(mappedBy = "tblSECUserEntity", fetch = FetchType.LAZY)
     private TblSECPasswordEntity tblSECPasswordEntity;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "tblSECUserRole",
         joinColumns = @JoinColumn(name = "UserId"),
         inverseJoinColumns = @JoinColumn(name = "RoleId"))

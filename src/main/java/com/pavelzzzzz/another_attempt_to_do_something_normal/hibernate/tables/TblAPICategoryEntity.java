@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "tblAPLCategory", schema = "news_blog", catalog = "")
+@Table(name = "tblAPLCategory", schema = "news_blog")
 public class TblAPICategoryEntity {
 
     @Id

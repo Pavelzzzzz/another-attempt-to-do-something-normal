@@ -5,11 +5,13 @@ import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.Tb
 import com.pavelzzzzz.another_attempt_to_do_something_normal.security.IUserSecurityService;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.security.entity.UserSecurity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.security.entity.dao.UserSecurityDao;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
+@Transactional
 public class UserSecurityService implements IUserSecurityService {
 
     @Autowired

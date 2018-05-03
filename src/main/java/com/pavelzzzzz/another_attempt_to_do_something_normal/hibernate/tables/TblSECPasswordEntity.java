@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "tblSECPassword")
+@Table(name = "tblSECPassword", schema = "news_blog")
 public class TblSECPasswordEntity {
 
     @Id
@@ -31,14 +31,14 @@ public class TblSECPasswordEntity {
         this.userId = userId;
     }
 
-    public TblSECUserEntity getTblSECUserEntity() {
-        return tblSECUserEntity;
-    }
-
-    public void setTblSECUserEntity(
-        TblSECUserEntity tblSECUserEntity) {
-        this.tblSECUserEntity = tblSECUserEntity;
-    }
+//    public TblSECUserEntity getTblSECUserEntity() {
+//        return tblSECUserEntity;
+//    }
+//
+//    public void setTblSECUserEntity(
+//        TblSECUserEntity tblSECUserEntity) {
+//        this.tblSECUserEntity = tblSECUserEntity;
+//    }
 
     public String getPassword() {
         return password;
