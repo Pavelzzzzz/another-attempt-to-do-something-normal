@@ -34,6 +34,6 @@ public class LanguageServiceImpl implements LanguageService {
     @Override
     public Language getLanguageByLanguageId(@NotBlank int languageId) {
         return languageDao.toEntity(
-            tblSERLanguageEntityDao.getUserByLanguageId(languageId));
+            tblSERLanguageEntityDao.getLanguageByLanguageId(languageId));
     }
 }

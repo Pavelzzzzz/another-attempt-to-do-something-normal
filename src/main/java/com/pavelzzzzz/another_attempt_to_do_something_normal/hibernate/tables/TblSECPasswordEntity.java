@@ -15,6 +15,7 @@ public class TblSECPasswordEntity {
     @Id
     private int userId;
 
+    @NotBlank
     @OneToOne(optional = false,
     //    mappedBy = "tblSECUserEntity",
         cascade = CascadeType.ALL)
@@ -23,22 +24,14 @@ public class TblSECPasswordEntity {
     @NotBlank
     private String password;
 
-    public int getUserId() {
-        return userId;
+    public TblSECUserEntity getTblSECUserEntity() {
+        return tblSECUserEntity;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setTblSECUserEntity(
+        TblSECUserEntity tblSECUserEntity) {
+        this.tblSECUserEntity = tblSECUserEntity;
     }
-
-//    public TblSECUserEntity getTblSECUserEntity() {
-//        return tblSECUserEntity;
-//    }
-//
-//    public void setTblSECUserEntity(
-//        TblSECUserEntity tblSECUserEntity) {
-//        this.tblSECUserEntity = tblSECUserEntity;
-//    }
 
     public String getPassword() {
         return password;

@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tblAPLCategory", schema = "news_blog")
-public class TblAPICategoryEntity {
+public class TblAPLCategoryEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

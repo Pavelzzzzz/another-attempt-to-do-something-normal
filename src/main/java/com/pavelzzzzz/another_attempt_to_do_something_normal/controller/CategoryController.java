@@ -1,6 +1,6 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.controller;
 
-import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblAPICategoryEntity;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblAPLCategoryEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.querydsl.binding.QuerydslPredicate;
@@ -20,7 +20,7 @@ public class CategoryController {
 
   @GetMapping("")
   public ResponseEntity<?> getAllCategories(
-      @QuerydslPredicate(root = TblAPICategoryEntity.class) Predicate predicate, Pageable pageable) {
+      @QuerydslPredicate(root = TblAPLCategoryEntity.class) Predicate predicate, Pageable pageable) {
     return ResponseEntity.ok(categoryService.getAllCategories(predicate, pageable));
   }
 }
