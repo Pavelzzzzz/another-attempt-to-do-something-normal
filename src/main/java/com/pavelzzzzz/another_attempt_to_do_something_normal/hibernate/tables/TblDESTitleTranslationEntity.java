@@ -11,14 +11,14 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "tblDESTileTranslation", schema = "news_blog")
-public class TblDesTileTranslationEntity {
+@Table(name = "tblDESTitleTranslation", schema = "news_blog")
+public class TblDESTitleTranslationEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int tileTranslationId;
+    private int titleTranslationId;
     @NotBlank
-    private String tileTranslation;
+    private String titleTranslation;
     @NotBlank
     @ManyToOne(optional = false,
             //    mappedBy = "tblSERLanguageEntity",
@@ -32,20 +32,20 @@ public class TblDesTileTranslationEntity {
     @JoinColumn(name = "NewsId")
     private TblAPLNewsEntity tblAPLNewsEntity;
 
-    public int getTileTranslationId() {
-        return tileTranslationId;
+    public int getTitleTranslationId() {
+        return titleTranslationId;
     }
 
-    public void setTileTranslationId(int tileTranslationId) {
-        this.tileTranslationId = tileTranslationId;
+    public void setTitleTranslationId(int titleTranslationId) {
+        this.titleTranslationId = titleTranslationId;
     }
 
-    public String getTileTranslation() {
-        return tileTranslation;
+    public String getTitleTranslation() {
+        return titleTranslation;
     }
 
-    public void setTileTranslation(String tileTranslation) {
-        this.tileTranslation = tileTranslation;
+    public void setTitleTranslation(String titleTranslation) {
+        this.titleTranslation = titleTranslation;
     }
 
     public TblSERLanguageEntity getTblSERLanguageEntity() {

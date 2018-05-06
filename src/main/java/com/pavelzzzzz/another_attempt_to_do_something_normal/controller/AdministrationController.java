@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(path = "administration/users")
-public class PageController {
+@RequestMapping(path = "administration")
+public class AdministrationController {
 
-  @RequestMapping("")
+  @RequestMapping("/users")
   public String getDemoPage(){
     return "administration/users";
   }

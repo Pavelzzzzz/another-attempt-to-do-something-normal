@@ -22,9 +22,4 @@ public class MainController {
         model.addAttribute("logout", logout != null);
         return "login";
     }
-
-    @RequestMapping("/demo")
-    public String getDemoPage(){
-        return "demo";
-    }
 }

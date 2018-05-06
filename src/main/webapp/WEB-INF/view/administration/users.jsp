@@ -1,12 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
-	<head>
-		<title>Users</title>
 
-		<jsp:include page="../header.jsp" />
-	</head>
-
-	<body>
+	<jsp:include page="../header.jsp" />
+	<title>Users</title>
 
 	<!--////////////////////////////////////Container-->
 	<section id="container">
@@ -46,9 +40,6 @@
 		<img src="/images/arrow_down_40.png">
 	</button>
 
-	<jsp:include page="../footer.jsp" />
-
 	<script src="/js/administration/users.js"></script>
 
-	</body>
-</html>
+	<jsp:include page="../footer.jsp" />

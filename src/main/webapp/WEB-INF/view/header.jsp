@@ -2,25 +2,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <html lang="en"> 
-	<head>
+<head>
 
-		<!-- Basic Page Needs
+	<!-- Basic Page Needs
   ================================================== -->
-		<meta charset="utf-8">
+	<meta charset="utf-8">
 
-		<!-- Mobile Specific Metas
+	<!-- Mobile Specific Metas
   ================================================== -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-		<!-- CSS
+	<!-- CSS
   ================================================== -->
-		<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 
-	</head>
-	<body>
+</head>
+
+<body>
+
 	<div class="wrap-body">
 
-		<!--////////////////////////////////////Header-->
+	<!--////////////////////////////////////Header-->
 		<header class="bg-theme">
 			<div class="wrap-header zerogrid">
 				<div class="row">
@@ -45,6 +47,4 @@
 	<script src="/js/jquery-latest.min.js"></script>
 	<script src="/js/script.js"></script>
 
-	</body>
 
-</html>
