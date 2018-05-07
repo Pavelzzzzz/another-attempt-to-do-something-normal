@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS tblAPLNews (
   `CreatedAt` DATETIME NOT NULL,
   `UpdatedAt` DATETIME NOT NULL,
   `CreatedBy` INT NOT NULL,
+  `TitleId` INT NOT NULL,
   `XMLArchitecture` MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`NewsId`),
   UNIQUE INDEX `NewsId_UNIQUE` (`NewsId` ASC));

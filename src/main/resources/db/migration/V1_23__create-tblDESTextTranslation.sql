@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS tblDESTextTranslation (
   `TextId` INT NOT NULL,
   `LanguageId` INT NOT NULL,
   `TextTranslation` MEDIUMTEXT NOT NULL,
-  PRIMARY KEY (`TextId`));
+  PRIMARY KEY (`TextId`, `LanguageId`));
 
 ALTER TABLE tblDESTextTranslation
   ADD CONSTRAINT tblDESTextTranslation_tblSERLanguage_FK

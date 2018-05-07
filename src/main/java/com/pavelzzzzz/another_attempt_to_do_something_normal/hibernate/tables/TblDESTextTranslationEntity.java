@@ -1,10 +1,14 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables;
 
+import java.io.Serializable;
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -12,11 +16,21 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tblDESTextTranslation", schema = "news_blog")
+@IdClass(TextIdLanguageId.class)
 public class TblDESTextTranslationEntity {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @AttributeOverrides({
+        @AttributeOverride(name = "textId",
+            column = @Column(name="TextId")),
+        @AttributeOverride(name = "languageId",
+            column = @Column(name="LanguageId"))
+    })
+
+    @NotBlank
     private int textId;
+    @NotBlank
+    private int languageId;
     @NotBlank
     private String textTranslation;
     @NotBlank
@@ -34,6 +48,14 @@ public class TblDESTextTranslationEntity {
         this.textId = textId;
     }
 
+    public int getLanguageId() {
+        return languageId;
+    }
+
+    public void setLanguageId(int languageId) {
+        this.languageId = languageId;
+    }
+
     public String getTextTranslation() {
         return textTranslation;
     }
@@ -48,5 +70,36 @@ public class TblDESTextTranslationEntity {
 
     public void setTblSERLanguageEntity(TblSERLanguageEntity tblSERLanguageEntity) {
         this.tblSERLanguageEntity = tblSERLanguageEntity;
+    }
+}
+
+@Embeddable
+class TextIdLanguageId implements Serializable{
+
+    private int textId;
+    private int languageId;
+
+    public TextIdLanguageId() {
+    }
+
+    public TextIdLanguageId(int textId, int languageId) {
+        this.textId = textId;
+        this.languageId = languageId;
+    }
+
+    public int getTextId() {
+        return textId;
+    }
+
+    public void setTextId(int textId) {
+        this.textId = textId;
+    }
+
+    public int getLanguageId() {
+        return languageId;
+    }
+
+    public void setLanguageId(int languageId) {
+        this.languageId = languageId;
     }
 }
