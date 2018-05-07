@@ -34,6 +34,8 @@ public class TblAPLNewsEntity {
     @JoinColumn(name = "CreatedBy")
     private TblSECUserEntity tblSECUserEntity;
     @NotBlank
+    private int titleId;
+    @NotBlank
     private String xmlArchitecture;
 
     public int getNewsId() {
@@ -74,6 +76,14 @@ public class TblAPLNewsEntity {
 
     public void setTblSECUserEntity(TblSECUserEntity tblSECUserEntity) {
         this.tblSECUserEntity = tblSECUserEntity;
+    }
+
+    public int getTitleId() {
+        return titleId;
+    }
+
+    public void setTitleId(int titleId) {
+        this.titleId = titleId;
     }
 
     public String getXmlArchitecture() {
