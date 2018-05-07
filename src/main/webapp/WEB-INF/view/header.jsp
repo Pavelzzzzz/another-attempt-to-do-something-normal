@@ -11,7 +11,11 @@
 	<!-- Mobile Specific Metas
   ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
+
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
 	<!-- CSS
   ================================================== -->
 	<link rel="stylesheet" href="/css/style.css">
@@ -25,12 +29,12 @@
 	<!--////////////////////////////////////Header-->
 		<header class="bg-theme">
 			<div class="wrap-header zerogrid">
-				<div class="row">
+				<div class="row" style="margin: 0">
 					<div id="cssmenu">
 						<ul>
 							<li class='active'><a href="/">Home</a></li>
 							<sec:authorize access="hasRole('Admin')">
-								<li class='active'><a href="administration/users">Users</a></li>
+								<li class='active'><a href="/administration/users">Users</a></li>
 							</sec:authorize>
 							<li><a href="single.html">About</a></li>
 							<li><a href="contact.html">Contact</a></li>

@@ -35,6 +35,10 @@ img{max-width:100%;	height: auto;width: auto\9; /* ie8 */}
 a{color: #434343;text-decoration: none;}
 a:hover {text-decoration: underline;}
 
+h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+}
+
 h1, h2 	{font-size: 25px;line-height: 25px;}
 h3, h4	{font-size: 20px;line-height: 20px;}
 h5, h6	{font-size: 16px;line-height: 16px;}
@@ -157,7 +161,12 @@ a.button{
 }
 a.button:hover{opacity: 0.9;}
 
-a.button.bt1 {background: #434343;color: #ffffff;padding: 5px 20px;width: 100%;text-align: center;border:1px solid #474747; }
+a.button.bt1 {background: #434343;
+    color: #ffffff;
+    padding: 5px 20px;
+    text-align: center;
+    border:1px solid #474747;
+}
 a.button.bt2 {background: #0000ff;color: #ffffff;}
 
 /* ---------------------------------------------------------------------------- */
@@ -679,3 +688,5 @@ table th, table td{
   padding: 3px; /* Поля вокруг содержимого таблицы */
   border: 1px solid maroon;
 }
+
+

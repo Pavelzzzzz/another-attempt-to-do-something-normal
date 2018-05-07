@@ -8,10 +8,10 @@
 			<div id="main-content">
 				<div class="wrap-box t-center" ><!--Start Box-->
 					<div class="header">
-						<h2>Users</h2>
+						<h4>Users</h4>
 					</div>
 					<div class="t-left" style="background: #fff; box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3); margin:20px;">
-						<div class="row" >
+						<%--<div class="row" >--%>
 							<div class="item-info">
 								<table id="tableOfUsers">
 									<thead>
@@ -29,7 +29,7 @@
 									</thead>
 								</table>
 							</div>
-						</div>
+						<%--</div>--%>
 					</div>
 				</div>
 			</div>

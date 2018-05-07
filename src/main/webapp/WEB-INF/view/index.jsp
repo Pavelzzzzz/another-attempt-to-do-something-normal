@@ -9,7 +9,7 @@
 			<div id="main-content">
 				<div class="wrap-box t-center" ><!--Start Box-->
 					<div class="header">
-						<h2>Home</h2>
+						<h4>Home</h4>
 					</div>
 					<div class="t-left" style="background: #fff; box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3); margin:20px;">
 						<div class="row" >
@@ -22,7 +22,5 @@
 			</div>
 		</div>
 	</section>
-
-	<script src="/js/users.js"></script>
 
 	<jsp:include page="footer.jsp" />
