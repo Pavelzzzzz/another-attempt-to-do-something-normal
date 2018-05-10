@@ -36,7 +36,7 @@ public class TblAPLNewsEntity {
     @NotBlank
     private int titleId;
     @NotBlank
-    private String xmlArchitecture;
+    private String htmlArchitecture;
 
     public int getNewsId() {
         return newsId;
@@ -86,11 +86,11 @@ public class TblAPLNewsEntity {
         this.titleId = titleId;
     }
 
-    public String getXmlArchitecture() {
-        return xmlArchitecture;
+    public String getHtmlArchitecture() {
+        return htmlArchitecture;
     }
 
-    public void setXmlArchitecture(String xmlArchitecture) {
-        this.xmlArchitecture = xmlArchitecture;
+    public void setHtmlArchitecture(String htmlArchitecture) {
+        this.htmlArchitecture = htmlArchitecture;
     }
 }

@@ -6,6 +6,6 @@ function on_load() {
 
 function save_news() {
     $('#container').append(
-        $('#txtedit').Editor("getText")
+        $('#txtedit').Editor("getText");
     );
 }
