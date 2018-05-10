@@ -1,7 +1,5 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.service.impl;
 
-import static org.junit.Assert.*;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -31,11 +29,17 @@ public class NewsServiceImplTest {
   }
 
   private void fun(Element element, List<String> textList){
-    textList.add(element.ownText());
+    if (element.ownText().length() != 0){
+      textList.add(element.ownText());
+    }
+
     for(Element child :
             element.children()){
       fun(child, textList);
     }
+    System.out.println(
+            Long.parseLong(";23;3;11;44;66;77;44...........".replaceAll("\\D",""))
+    );
 
   }
 
