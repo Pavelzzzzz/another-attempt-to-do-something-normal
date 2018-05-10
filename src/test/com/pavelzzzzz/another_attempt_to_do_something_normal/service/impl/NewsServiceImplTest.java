@@ -25,12 +25,15 @@ public class NewsServiceImplTest {
     Document html = Jsoup.parse(htmlText);
     List<String> textList = new LinkedList<>();
     fun(html.body(), textList);
-    System.out.println(textList);
+//    System.out.println(textList);
+    html.body().outerHtml();
   }
 
   private void fun(Element element, List<String> textList){
     if (element.ownText().length() != 0){
       textList.add(element.ownText());
+      element.text(element.ownText());
+      System.out.println(element.ownText());
     }
 
     for(Element child :

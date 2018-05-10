@@ -20,7 +20,7 @@ public interface TblAPLNewsEntityDao
     TblAPLNewsEntity getNewsByNewsId(int newsId);
 
     @Override
-    default void customize(QuerydslBindings querydslBindings, QTblAPLNewsEntity qTblAPICategoryEntity){
+    default void customize(QuerydslBindings querydslBindings, QTblAPLNewsEntity qTblAPLNewsEntity){
 
     }
 }

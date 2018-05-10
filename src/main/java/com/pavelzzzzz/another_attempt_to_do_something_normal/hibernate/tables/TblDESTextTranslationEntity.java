@@ -16,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tblDESTextTranslation", schema = "news_blog")
-@IdClass(TextIdLanguageId.class)
+@IdClass(TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId.class)
 public class TblDESTextTranslationEntity {
 
     @Id
@@ -73,33 +73,3 @@ public class TblDESTextTranslationEntity {
     }
 }
 
-@Embeddable
-class TextIdLanguageId implements Serializable{
-
-    private int textId;
-    private int languageId;
-
-    public TextIdLanguageId() {
-    }
-
-    public TextIdLanguageId(int textId, int languageId) {
-        this.textId = textId;
-        this.languageId = languageId;
-    }
-
-    public int getTextId() {
-        return textId;
-    }
-
-    public void setTextId(int textId) {
-        this.textId = textId;
-    }
-
-    public int getLanguageId() {
-        return languageId;
-    }
-
-    public void setLanguageId(int languageId) {
-        this.languageId = languageId;
-    }
-}
