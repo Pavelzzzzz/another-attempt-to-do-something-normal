@@ -5,12 +5,15 @@ import static org.junit.Assert.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.junit.Test;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class NewsServiceImplTest {
 
-  private final String htmlText = "<div style=\"text-align: center;\">"
+  private final String htmlText = "qqqqqqqqqqq<div>wwwwwwwwwwww</div><div>eeeeee</div>"
+      + "<div style=\"text-align: center;\">"
       + "<span style=\"font-size: 14px; font-weight: bold;\">sdjlfjksdnfasd</span>"
       + "</div>"
       + "<div style=\"text-align: center;\">"
@@ -22,12 +25,18 @@ public class NewsServiceImplTest {
   @Test
   public void getNewsByLanguageIdAndNewsId() {
     Document html = Jsoup.parse(htmlText);
-    Elements allElements = html.body().getAllElements();
-    for (Element elements :
-        allElements){
-      System.out.println(elements);
-      System.out.println();
+    List<String> textList = new LinkedList<>();
+    fun(html.body(), textList);
+    System.out.println(textList);
+  }
+
+  private void fun(Element element, List<String> textList){
+    textList.add(element.ownText());
+    for(Element child :
+            element.children()){
+      fun(child, textList);
     }
+
   }
 
 }
