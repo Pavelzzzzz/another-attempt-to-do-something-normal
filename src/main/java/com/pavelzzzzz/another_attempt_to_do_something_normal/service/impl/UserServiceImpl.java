@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserByUserId(int userId) {
-        return userDao.toEntity(tblSECUserEntityDao.getUserByUserId(userId));
+        return userDao.toEntity(tblSECUserEntityDao.getByUserId(userId));
     }
 
 //    @Override

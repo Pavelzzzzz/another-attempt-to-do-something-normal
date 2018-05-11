@@ -22,7 +22,7 @@ public class UserSecurityService implements IUserSecurityService {
     @Override
     public UserSecurity loadUserByUsername(String username) throws UsernameNotFoundException {
         TblSECUserEntity tblSECUserEntity =
-            tblSECUserEntityDao.getUserByUsername(username);
+            tblSECUserEntityDao.getByUsername(username);
         if(tblSECUserEntity == null){
             throw new UsernameNotFoundException(username);
         }

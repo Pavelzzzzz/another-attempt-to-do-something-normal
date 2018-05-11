@@ -19,7 +19,28 @@ public class News {
     @NotBlank
     private String title;
     @NotBlank
-    private String body;
+    private String htmlArchitecture;
+
+    public News() {
+    }
+
+    public News(@NotBlank int newsId,
+        @NotBlank Language language,
+        @NotBlank Category category,
+        @NotBlank Timestamp createdAt,
+        Timestamp updatedAt,
+        @NotBlank User createdBy,
+        @NotBlank String title,
+        @NotBlank String htmlArchitecture) {
+        this.newsId = newsId;
+        this.language = language;
+        this.category = category;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.createdBy = createdBy;
+        this.title = title;
+        this.htmlArchitecture = htmlArchitecture;
+    }
 
     public int getNewsId() {
         return newsId;
@@ -80,11 +101,11 @@ public class News {
         this.title = title;
     }
 
-    public String getBody() {
-        return body;
+    public String getHtmlArchitecture() {
+        return htmlArchitecture;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setHtmlArchitecture(String htmlArchitecture) {
+        this.htmlArchitecture = htmlArchitecture;
     }
 }

@@ -16,8 +16,8 @@ public interface TblSERLanguageEntityDao
         QuerydslPredicateExecutor<TblSERLanguageEntity>,
         QuerydslBinderCustomizer<QTblSERLanguageEntity> {
 
-    TblSERLanguageEntity getLanguageByLanguageId(int languageId);
-    TblSERLanguageEntity getLanguageByIsoCode(String isoCode);
+    TblSERLanguageEntity getByLanguageId(int languageId);
+    TblSERLanguageEntity getByIsoCode(String isoCode);
 
     @Override
     default void customize(QuerydslBindings querydslBindings,

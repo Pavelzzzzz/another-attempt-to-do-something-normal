@@ -12,10 +12,17 @@ import javax.validation.constraints.NotBlank;
 public class TblSERLanguageEntity {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int languageId;
     @NotBlank
     private String isoCode;
+
+    public TblSERLanguageEntity() {
+    }
+
+    public TblSERLanguageEntity(@NotBlank String isoCode) {
+        this.isoCode = isoCode;
+    }
 
     public int getLanguageId() {
         return languageId;

@@ -17,7 +17,7 @@ public interface TblAPLNewsEntityDao
         QuerydslPredicateExecutor<TblAPLNewsEntity>,
         QuerydslBinderCustomizer<QTblAPLNewsEntity> {
 
-    TblAPLNewsEntity getNewsByNewsId(int newsId);
+    TblAPLNewsEntity getByNewsId(int newsId);
 
     @Override
     default void customize(QuerydslBindings querydslBindings, QTblAPLNewsEntity qTblAPLNewsEntity){

@@ -17,8 +17,8 @@ public interface TblAPLCategoryEntityDao
         QuerydslPredicateExecutor<TblAPLCategoryEntity>,
         QuerydslBinderCustomizer<QTblAPLCategoryEntity> {
 
-    TblAPLCategoryEntity getCategoryByCategoryId(int categoryId);
-    TblAPLCategoryEntity getCategoryByCategoryName(String categoryName);
+    TblAPLCategoryEntity getByCategoryId(int categoryId);
+    TblAPLCategoryEntity getByCategoryName(String categoryName);
 
     @Override
     default void customize(QuerydslBindings querydslBindings, QTblAPLCategoryEntity qTblAPICategoryEntity){

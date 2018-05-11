@@ -1,59 +1,55 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables;
 
-import java.io.Serializable;
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.NamedStoredProcedureQueries;
+import javax.persistence.NamedStoredProcedureQuery;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+@NamedStoredProcedureQueries({
+    @NamedStoredProcedureQuery(
+        name = "do_create_tblDESTextTranslationEntity",
+        procedureName = "create_tblDESTextTranslationEntity",
+        parameters = {
+            @StoredProcedureParameter( name = "textId",  type = int.class,  mode = ParameterMode.IN),
+            @StoredProcedureParameter( name = "languageId",  type = int.class,  mode = ParameterMode.IN),
+            @StoredProcedureParameter( name = "textTranslation",  type = String.class,  mode = ParameterMode.IN),
+            @StoredProcedureParameter( name = "appointedTextId",  type = int.class,  mode = ParameterMode.OUT)
+        }),
+
+})
+
 @Entity
 @Table(name = "tblDESTextTranslation", schema = "news_blog")
-@IdClass(TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId.class)
+//@IdClass(TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId.class)
 public class TblDESTextTranslationEntity {
 
-    @Id
-    @AttributeOverrides({
-        @AttributeOverride(name = "textId",
-            column = @Column(name="TextId")),
-        @AttributeOverride(name = "languageId",
-            column = @Column(name="LanguageId"))
-    })
-
-    @NotBlank
-    private int textId;
-    @NotBlank
-    private int languageId;
+    @EmbeddedId
+    private TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId
+        primaryKeyTextIdLanguageId;
     @NotBlank
     private String textTranslation;
-    @NotBlank
-    @ManyToOne(optional = false,
-            //    mappedBy = "tblSERLanguageEntity",
-            cascade = CascadeType.ALL)
-    @JoinColumn(name = "LanguageId")
-    private TblSERLanguageEntity tblSERLanguageEntity;
 
-    public int getTextId() {
-        return textId;
+    public TblDESTextTranslationEntity() {
     }
 
-    public void setTextId(int textId) {
-        this.textId = textId;
+    public TblDESTextTranslationEntity(
+        TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId primaryKeyTextIdLanguageId,
+        @NotBlank String textTranslation) {
+        this.primaryKeyTextIdLanguageId = primaryKeyTextIdLanguageId;
+        this.textTranslation = textTranslation;
     }
 
-    public int getLanguageId() {
-        return languageId;
+    public TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId getPrimaryKeyTextIdLanguageId() {
+        return primaryKeyTextIdLanguageId;
     }
 
-    public void setLanguageId(int languageId) {
-        this.languageId = languageId;
+    public void setPrimaryKeyTextIdLanguageId(
+        TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId primaryKeyTextIdLanguageId) {
+        this.primaryKeyTextIdLanguageId = primaryKeyTextIdLanguageId;
     }
 
     public String getTextTranslation() {
@@ -64,12 +60,5 @@ public class TblDESTextTranslationEntity {
         this.textTranslation = textTranslation;
     }
 
-    public TblSERLanguageEntity getTblSERLanguageEntity() {
-        return tblSERLanguageEntity;
-    }
-
-    public void setTblSERLanguageEntity(TblSERLanguageEntity tblSERLanguageEntity) {
-        this.tblSERLanguageEntity = tblSERLanguageEntity;
-    }
 }
 

@@ -18,7 +18,7 @@ import javax.validation.constraints.NotBlank;
 public class TblSECUserEntity{
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int userId;
     @NotBlank
     private String username;
@@ -33,6 +33,22 @@ public class TblSECUserEntity{
         joinColumns = @JoinColumn(name = "UserId"),
         inverseJoinColumns = @JoinColumn(name = "RoleId"))
     private List<TblSECRoleEntity> listRoleEntity;
+
+    public TblSECUserEntity() {
+    }
+
+    public TblSECUserEntity(
+        @NotBlank String username,
+        @NotBlank String email,
+        @NotBlank boolean enabled,
+        TblSECPasswordEntity tblSECPasswordEntity,
+        List<TblSECRoleEntity> listRoleEntity) {
+        this.username = username;
+        this.email = email;
+        this.enabled = enabled;
+        this.tblSECPasswordEntity = tblSECPasswordEntity;
+        this.listRoleEntity = listRoleEntity;
+    }
 
     public int getUserId() {
         return userId;

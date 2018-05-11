@@ -12,10 +12,17 @@ import javax.validation.constraints.NotBlank;
 public class TblAPLCategoryEntity {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int categoryId;
     @NotBlank
     private String categoryName;
+
+    public TblAPLCategoryEntity() {
+    }
+
+    public TblAPLCategoryEntity(@NotBlank String categoryName) {
+        this.categoryName = categoryName;
+    }
 
     public int getCategoryId() {
         return categoryId;

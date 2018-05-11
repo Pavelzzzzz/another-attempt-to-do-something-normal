@@ -16,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 public class TblSECRoleEntity{
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int roleId;
     @NotBlank
     private String role;

@@ -3,11 +3,14 @@ package com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.QTblDESTextTranslationEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblDESTextTranslationEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId;
+import java.util.List;
 import javax.transaction.Transactional;
+import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.querydsl.binding.QuerydslBindings;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -18,12 +21,30 @@ public interface TblDESTextTranslationEntityDao
         QuerydslPredicateExecutor<TblDESTextTranslationEntity>,
         QuerydslBinderCustomizer<QTblDESTextTranslationEntity> {
 
-    TblDESTextTranslationEntity getTextTranslationByPrimaryKey(
-        TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId id);
+    TblDESTextTranslationEntity getByPrimaryKeyTextIdLanguageId(
+        TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId primaryKeyTextIdLanguageId);
+
+    List<TblDESTextTranslationEntity> findAllByPrimaryKeyTextIdLanguageIdTextId (
+        int textId);
+
+    @Procedure(name = "do_create_tblDESTextTranslationEntity")
+    int create_tblDESTextTranslationEntity(
+        @Param("textId") int textId,
+        @Param("languageId") int languageId,
+        @Param("textTranslation") String textTranslation);
+
+
+//    @Procedure(name = "create_tblDESTextTranslationEntity")
+//    TblDESTextTranslationEntity create_tblDESTextTranslationEntity(@Param(
+//        "textId") int textId, @Param("languageId") int languageId, @Param("textTranslation") String textTranslation);
+
+    //    TblDESTextTranslationEntity getTextTranslationByTextIdAndAndLanguageId(
+//        int textId, int languageId);
+
+    //    TblDESTextTranslationEntity getTextTranslationByTextId(int textId);
 
     @Override
     default void customize(QuerydslBindings querydslBindings,
         QTblDESTextTranslationEntity qTblDESTextTranslationEntity){
-
     }
 }

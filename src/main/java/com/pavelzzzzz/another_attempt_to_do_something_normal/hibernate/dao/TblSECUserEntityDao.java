@@ -17,8 +17,8 @@ public interface TblSECUserEntityDao
         QuerydslPredicateExecutor<TblSECUserEntity>,
         QuerydslBinderCustomizer<QTblSECUserEntity> {
 
-    TblSECUserEntity getUserByUserId(int userId);
-    TblSECUserEntity getUserByUsername(String username);
+    TblSECUserEntity getByUserId(int userId);
+    TblSECUserEntity getByUsername(String username);
 
     @Override
     default void customize(QuerydslBindings querydslBindings, QTblSECUserEntity qTblSECUserEntity){

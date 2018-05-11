@@ -16,27 +16,39 @@ import javax.validation.constraints.NotBlank;
 public class TblAPLNewsEntity {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int newsId;
-    @NotBlank
+//    @NotBlank
     @ManyToOne(optional = false,
             //    mappedBy = "tblSERLanguageEntity",
             cascade = CascadeType.ALL)
     @JoinColumn(name = "CategoryId")
     private TblAPLCategoryEntity tblAPICategoryEntity;
-    @NotBlank
     private Timestamp createdAt;
     private Timestamp updatedAt;
-    @NotBlank
+//    @NotBlank
     @ManyToOne(optional = false,
-            //    mappedBy = "tblSERLanguageEntity",
             cascade = CascadeType.ALL)
     @JoinColumn(name = "CreatedBy")
     private TblSECUserEntity tblSECUserEntity;
-    @NotBlank
+//    @NotBlank
     private int titleId;
-    @NotBlank
+//    @NotBlank
     private String htmlArchitecture;
+
+    public TblAPLNewsEntity() {
+    }
+
+    public TblAPLNewsEntity(
+        @NotBlank TblAPLCategoryEntity tblAPICategoryEntity,
+        @NotBlank TblSECUserEntity tblSECUserEntity,
+        @NotBlank int titleId,
+        @NotBlank String htmlArchitecture) {
+        this.tblAPICategoryEntity = tblAPICategoryEntity;
+        this.tblSECUserEntity = tblSECUserEntity;
+        this.titleId = titleId;
+        this.htmlArchitecture = htmlArchitecture;
+    }
 
     public int getNewsId() {
         return newsId;

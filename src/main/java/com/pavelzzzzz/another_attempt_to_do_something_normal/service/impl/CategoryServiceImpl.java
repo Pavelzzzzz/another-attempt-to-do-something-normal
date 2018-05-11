@@ -34,7 +34,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public Category getCategoryByCategoryId(@NotBlank int categoryId) {
         return categoryDao.toEntity(
-            tblAPLCategoryEntityDao.getCategoryByCategoryId(categoryId));
+            tblAPLCategoryEntityDao.getByCategoryId(categoryId));
     }
 
 }

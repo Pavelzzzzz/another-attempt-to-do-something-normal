@@ -1,9 +1,18 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.service.impl;
 
+import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblAPLCategoryEntityDao;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblAPLNewsEntityDao;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblDESTextTranslationEntityDao;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblSECUserEntityDao;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblSERLanguageEntityDao;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblAPLNewsEntity;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.NewsService;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.News;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.CategoryDao;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.LanguageDao;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.UserDao;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.service.text_code_transformations.Transformer;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,42 +21,81 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class NewsServiceImpl implements NewsService {
 
-//  @Autowired
-//  private NewsDao newsDao;
+  @Autowired
+  private TblSECUserEntityDao tblSECUserEntityDao;
   @Autowired
   private TblAPLNewsEntityDao tblAPLNewsEntityDao;
   @Autowired
-
+  private TblSERLanguageEntityDao tblSERLanguageEntityDao;
+  @Autowired
+  private TblAPLCategoryEntityDao tblAPLCategoryEntityDao;
+  @Autowired
+  private TblDESTextTranslationEntityDao tblDESTextTranslationEntityDao;
+  @Autowired
+  private LanguageDao languageDao;
+  @Autowired
+  private CategoryDao categoryDao;
+  @Autowired
+  private UserDao userDao;
+  @Autowired
+  private Transformer codeToTextTransformer;
+  @Autowired
+  private Transformer textToCodeTransformer;
 
   @Override
-  public News getNewsByLanguageIdAndNewsId(
-      Integer languageId, Integer newsId) {
+  public News getNewsByNewsIdAndLanguageId(int newsId, int languageId) {
     TblAPLNewsEntity tblAPLNewsEntity =
-        tblAPLNewsEntityDao.getNewsByNewsId(newsId);
-    return null;
+        tblAPLNewsEntityDao.getByNewsId(newsId);
+
+    Document html = Jsoup.parse(tblAPLNewsEntity.getHtmlArchitecture());
+    transformHtmlElement(html.body(), languageId, codeToTextTransformer);
+
+    return new News(tblAPLNewsEntity.getNewsId(),
+        languageDao.toEntity(tblSERLanguageEntityDao.getByLanguageId(languageId)),
+        categoryDao.toEntity(tblAPLNewsEntity.getTblAPICategoryEntity()),
+        tblAPLNewsEntity.getCreatedAt(),
+        tblAPLNewsEntity.getUpdatedAt(),
+        userDao.toEntity(tblAPLNewsEntity.getTblSECUserEntity()),
+        tblDESTextTranslationEntityDao.getByPrimaryKeyTextIdLanguageId(
+            new TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId(
+                tblAPLNewsEntity.getTitleId(),
+                languageId))
+            .getTextTranslation(),
+        html.body().outerHtml());
   }
 
-  private String createNewsBodyFromHtmlArchitecture(
-      String htmlArchitecture){
-    Document html = Jsoup.parse(htmlArchitecture);
-    html.body().html();
-    return null;
-  }
+  @Override
+  public int saveNews(
+      int languageId,
+      int categoryId,
+      int userId,
+      String title,
+      String htmlText){
 
-  private void transformToHtmlElement(Element element) {
+    Document html = Jsoup.parse(htmlText);
+    transformHtmlElement(html.body() ,languageId, textToCodeTransformer);
+
+    TblAPLNewsEntity tblAPLNewsEntity = new TblAPLNewsEntity(
+        tblAPLCategoryEntityDao.getByCategoryId(categoryId),
+        tblSECUserEntityDao.getByUserId(userId),
+        Integer.parseInt(
+            textToCodeTransformer.transform(title, languageId)
+                .replaceAll("\\D", "")),
+        html.body().outerHtml());
+
+    tblAPLNewsEntityDao.save(tblAPLNewsEntity);
+    return 0;
+  }
+  private void transformHtmlElement(Element element, int languageId, Transformer transformer) {
     for (TextNode textNode :
         element.textNodes()){
-      if (textNode.text().startsWith("/~") &&
-          textNode.text().endsWith("~/")){
-        int textElementId =
-            Integer.parseInt(
-                textNode.text().replaceAll("\\D", ""));
-//        textNode.text(
-      }
+      textNode.text(
+          transformer.transform(textNode.text(), languageId));
     }
     for (Element child :
         element.children()) {
-      transformToHtmlElement(child);
+      transformHtmlElement(child, languageId, transformer);
     }
   }
+
 }
