@@ -78,10 +78,11 @@ public class NewsServiceImpl implements NewsService {
         tblSECUserEntityDao.getByUserId(userId),
         Integer.parseInt(
             textToCodeTransformer.transform(title, languageId)
-                 .replaceAll("\\D", "")),
+                .replaceAll("\\D", "")),
         html.body().outerHtml());
 
-    return tblAPLNewsEntityDao.save(tblAPLNewsEntity).getNewsId();
+    int newsId = tblAPLNewsEntityDao.save(tblAPLNewsEntity).getNewsId();
+    return newsId;
   }
 
   private void transformHtmlElement(Element element, int languageId, Transformer transformer) {

@@ -38,6 +38,12 @@
 							</sec:authorize>
 							<li><a href="single.html">About</a></li>
 							<li><a href="contact.html">Contact</a></li>
+							<sec:authorize access="isAuthenticated()">
+								<li><a href="/login?logout">Logout</a></li>
+							</sec:authorize>
+							<sec:authorize access="isAnonymous()">
+								<li><a href="/login">Login</a></li>
+							</sec:authorize>
 						</ul>
 					</div>
 					<a href='/' class="logo"><img src="/images/logo.png" /></a>
