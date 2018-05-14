@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "tblAPLNews", schema = "news_blog")
@@ -18,32 +19,31 @@ public class TblAPLNewsEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int newsId;
-//    @NotBlank
-    @ManyToOne(optional = false,
+    @NotNull
+    @ManyToOne(optional = false)
             //    mappedBy = "tblSERLanguageEntity",
-            cascade = CascadeType.ALL)
+//            cascade = CascadeType.ALL)
     @JoinColumn(name = "CategoryId")
     private TblAPLCategoryEntity tblAPICategoryEntity;
     private Timestamp createdAt;
     private Timestamp updatedAt;
-//    @NotBlank
-    @ManyToOne(optional = false,
-            cascade = CascadeType.ALL)
+    @NotNull
+    @ManyToOne(optional = false)
+//            cascade = CascadeType.ALL)
     @JoinColumn(name = "CreatedBy")
     private TblSECUserEntity tblSECUserEntity;
-//    @NotBlank
+    @NotNull
     private int titleId;
-//    @NotBlank
+    @NotBlank
     private String htmlArchitecture;
 
     public TblAPLNewsEntity() {
     }
 
-    public TblAPLNewsEntity(
-        @NotBlank TblAPLCategoryEntity tblAPICategoryEntity,
-        @NotBlank TblSECUserEntity tblSECUserEntity,
-        @NotBlank int titleId,
-        @NotBlank String htmlArchitecture) {
+    public TblAPLNewsEntity(@NotNull TblAPLCategoryEntity tblAPICategoryEntity,
+                            @NotNull TblSECUserEntity tblSECUserEntity,
+                            @NotNull int titleId,
+                            @NotBlank String htmlArchitecture) {
         this.tblAPICategoryEntity = tblAPICategoryEntity;
         this.tblSECUserEntity = tblSECUserEntity;
         this.titleId = titleId;

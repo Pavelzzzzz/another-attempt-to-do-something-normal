@@ -18,7 +18,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.TextNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NewsServiceImpl implements NewsService {
 
   @Autowired
@@ -65,12 +67,8 @@ public class NewsServiceImpl implements NewsService {
   }
 
   @Override
-  public int saveNews(
-      int languageId,
-      int categoryId,
-      int userId,
-      String title,
-      String htmlText){
+  public int saveNews(int languageId, int categoryId,
+                      int userId, String title, String htmlText){
 
     Document html = Jsoup.parse(htmlText);
     transformHtmlElement(html.body() ,languageId, textToCodeTransformer);
@@ -80,12 +78,12 @@ public class NewsServiceImpl implements NewsService {
         tblSECUserEntityDao.getByUserId(userId),
         Integer.parseInt(
             textToCodeTransformer.transform(title, languageId)
-                .replaceAll("\\D", "")),
+                 .replaceAll("\\D", "")),
         html.body().outerHtml());
 
-    tblAPLNewsEntityDao.save(tblAPLNewsEntity);
-    return 0;
+    return tblAPLNewsEntityDao.save(tblAPLNewsEntity).getNewsId();
   }
+
   private void transformHtmlElement(Element element, int languageId, Transformer transformer) {
     for (TextNode textNode :
         element.textNodes()){

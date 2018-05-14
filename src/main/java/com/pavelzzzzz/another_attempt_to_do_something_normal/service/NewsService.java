@@ -6,10 +6,6 @@ public interface NewsService {
 
   News getNewsByNewsIdAndLanguageId(int newsId, int languageId);
 
-  int saveNews(
-      int languageId,
-      int categoryId,
-      int userId,
-      String title,
-      String htmlText);
+  int saveNews(int languageId, int categoryId,
+               int userId, String title, String htmlText);
 }

@@ -8,22 +8,34 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(path = "api/administration/news")
 public class NewsController {
 
-//  @Autowired
-//  private NewsService newsService;
-//
-//    @GetMapping("/{id}")
-//    public ResponseEntity<?> getNewsById(
-//        @PathVariable("id") Integer newsId,
-//        @RequestBody Integer languageId) {
-//        News news = newsService.getNewsByLanguageIdAndNewsId(
-//            languageId, newsId);
-//        return new ResponseEntity<News>(news, HttpStatus.OK);
-//    }
+    @Autowired
+    private NewsService newsService;
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getNewsById(
+            @PathVariable("id") int newsId,
+            @RequestParam int languageId) {
+        News news = newsService.getNewsByNewsIdAndLanguageId(
+                newsId, languageId);
+        return new ResponseEntity<News>(news, HttpStatus.OK);
+    }
+
+    @PostMapping("")
+    public void addNews(
+            @RequestParam int languageId,
+            @RequestParam int categoryId,
+            @RequestParam int userId,
+            @RequestParam String title,
+            @RequestParam String htmlText){
+        int newsId = newsService.saveNews(languageId, categoryId, userId, title, htmlText);
+//        return new ResponseEntity<Integer>(newsId, HttpStatus.OK);
+    }
 }

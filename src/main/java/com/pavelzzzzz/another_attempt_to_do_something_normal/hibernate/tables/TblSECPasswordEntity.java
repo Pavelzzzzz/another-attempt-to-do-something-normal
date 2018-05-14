@@ -17,8 +17,9 @@ public class TblSECPasswordEntity {
 
     @NotBlank
     @OneToOne(optional = false,
-    //    mappedBy = "tblSECUserEntity",
-        cascade = CascadeType.ALL)
+            //    mappedBy = "tblSECUserEntity",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     @JoinColumn(name = "UserId")
     private TblSECUserEntity tblSECUserEntity;
     @NotBlank

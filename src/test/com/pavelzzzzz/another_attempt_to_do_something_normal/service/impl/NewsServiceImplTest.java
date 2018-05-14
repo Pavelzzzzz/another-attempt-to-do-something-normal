@@ -91,12 +91,13 @@ public class NewsServiceImplTest {
 
 //    tblSERLanguageEntityDao.save(new TblSERLanguageEntity("is2"));
 //    tblAPLCategoryEntityDao.save( new TblAPLCategoryEntity("+++"));
-    tblAPLNewsEntityDao.save(new TblAPLNewsEntity(
-        tblAPLCategoryEntityDao.getByCategoryId(19),
-        tblSECUserEntityDao.getByUserId(1),
-        1,
-        ""
-    ));
+//    tblAPLNewsEntityDao.save(new TblAPLNewsEntity(
+//        tblAPLCategoryEntityDao.getByCategoryId(1),
+//        tblSECUserEntityDao.getByUserId(1),
+//        1,
+//        "123"
+//    ));
+    tblAPLNewsEntityDao.getByNewsId(2);
   }
 
 //  public TblAPLNewsEntity(

@@ -26,7 +26,7 @@ function get_users() {
     data: JSON.parse(sessionStorage.getItem("dataForLoad")),
     dataType: 'json',
     success: function (data) {
-      if (data !== "false") {
+      if (data != "false") {
         //console.log(JSON.stringify(data));
         console.log(data);
         for (var i = 0; i < data.length; i++ ){

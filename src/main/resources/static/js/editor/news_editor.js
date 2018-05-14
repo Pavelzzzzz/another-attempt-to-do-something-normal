@@ -5,7 +5,26 @@ function on_load() {
 }
 
 function save_news() {
-    $('#container').append(
-        $('#txtedit').Editor("getText")
-    );
+
+    console.log("saving news");
+
+    var saveNewsRequestBody = {};
+    saveNewsRequestBody["languageId"] = 2;
+    saveNewsRequestBody["categoryId"] = 1;
+    saveNewsRequestBody["userId"] = 1;
+    saveNewsRequestBody["title"] = "js test news";
+    saveNewsRequestBody["htmlText"] = $('#txtedit').Editor("getText");
+
+    $.ajax({
+        type: "POST",
+        url: "/api/administration/news",
+        data: saveNewsRequestBody,
+        dataType: 'json',
+        success: function (data) {
+            alert(data);
+        },
+        error: function (error) {
+            console.log("Error: " + error.status);
+        }
+    });
 }

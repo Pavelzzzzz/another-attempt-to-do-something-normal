@@ -13,6 +13,7 @@ public class News {
     private Category category;
     @NotBlank
     private Timestamp createdAt;
+    @NotBlank
     private Timestamp updatedAt;
     @NotBlank
     private User createdBy;
@@ -25,13 +26,13 @@ public class News {
     }
 
     public News(@NotBlank int newsId,
-        @NotBlank Language language,
-        @NotBlank Category category,
-        @NotBlank Timestamp createdAt,
-        Timestamp updatedAt,
-        @NotBlank User createdBy,
-        @NotBlank String title,
-        @NotBlank String htmlArchitecture) {
+                @NotBlank Language language,
+                @NotBlank Category category,
+                @NotBlank Timestamp createdAt,
+                @NotBlank Timestamp updatedAt,
+                @NotBlank User createdBy,
+                @NotBlank String title,
+                @NotBlank String htmlArchitecture) {
         this.newsId = newsId;
         this.language = language;
         this.category = category;
@@ -55,7 +56,7 @@ public class News {
     }
 
     public void setLanguage(
-        Language language) {
+            Language language) {
         this.language = language;
     }
 
@@ -64,7 +65,7 @@ public class News {
     }
 
     public void setCategory(
-        Category category) {
+            Category category) {
         this.category = category;
     }
 
@@ -89,7 +90,7 @@ public class News {
     }
 
     public void setCreatedBy(
-        User createdBy) {
+            User createdBy) {
         this.createdBy = createdBy;
     }
 
