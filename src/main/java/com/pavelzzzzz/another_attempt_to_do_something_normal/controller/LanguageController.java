@@ -19,8 +19,8 @@ public class LanguageController {
   private LanguageService languageService;
 
   @GetMapping("")
-  public ResponseEntity<?> getAllLanguages(
+  public ResponseEntity<?> findAllLanguages(
       @QuerydslPredicate(root = TblSERLanguageEntity.class) Predicate predicate, Pageable pageable) {
-    return ResponseEntity.ok(languageService.getAllLanguages(predicate, pageable));
+    return ResponseEntity.ok(languageService.findAll(predicate, pageable));
   }
 }

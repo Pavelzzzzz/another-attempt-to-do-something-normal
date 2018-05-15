@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public List<User> getAllUsers(Predicate predicate, Pageable pageable) {
+    public List<User> findAll(Predicate predicate, Pageable pageable) {
         List<User> users = new LinkedList<>();
         for(TblSECUserEntity tblSECUserEntity:
             tblSECUserEntityDao.findAll(predicate, pageable)){

@@ -13,12 +13,16 @@ import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.LanguageDao;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.UserDao;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.text_code_transformations.Transformer;
+import com.querydsl.core.types.Predicate;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.TextNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class NewsServiceImpl implements NewsService {
@@ -97,4 +101,8 @@ public class NewsServiceImpl implements NewsService {
     }
   }
 
+  @Override
+  public List<News> findAll(Predicate predicate, Pageable pageable) {
+    return null;
+  }
 }

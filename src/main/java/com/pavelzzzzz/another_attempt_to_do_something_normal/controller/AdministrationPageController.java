@@ -5,11 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(path = "administration")
-public class AdministrationController {
+public class AdministrationPageController {
 
   @RequestMapping("/users")
-  public String getDemoPage(){
+  public String getUsersPage(){
     return "administration/users";
+  }
+
+  @RequestMapping("/categories")
+  public String getCategoriesPage(){
+    return "administration/categories";
   }
 
 }

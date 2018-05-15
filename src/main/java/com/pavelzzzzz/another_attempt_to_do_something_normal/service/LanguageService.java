@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface LanguageService {
 
-    List<Language> getAllLanguages(Predicate predicate, Pageable pageable);
+    List<Language> findAll(Predicate predicate, Pageable pageable);
 
     Language getLanguageByLanguageId(@NotBlank int languageId);
 }

@@ -19,8 +19,8 @@ public class CategoryController {
   private CategoryService categoryService;
 
   @GetMapping("")
-  public ResponseEntity<?> getAllCategories(
+  public ResponseEntity<?> findAllCategories(
       @QuerydslPredicate(root = TblAPLCategoryEntity.class) Predicate predicate, Pageable pageable) {
-    return ResponseEntity.ok(categoryService.getAllCategories(predicate, pageable));
+    return ResponseEntity.ok(categoryService.findAll(predicate, pageable));
   }
 }

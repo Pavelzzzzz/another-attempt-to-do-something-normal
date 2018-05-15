@@ -19,9 +19,9 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("")
-    public ResponseEntity<?> getAllUser(
+    public ResponseEntity<?> findAllUser(
             @QuerydslPredicate(root = TblSECUserEntity.class) Predicate predicate, Pageable pageable) {
-        return ResponseEntity.ok(userService.getAllUsers(predicate, pageable));
+        return ResponseEntity.ok(userService.findAll(predicate, pageable));
     }
 
 //    @GetMapping("/")

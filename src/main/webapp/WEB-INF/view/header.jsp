@@ -35,11 +35,12 @@
 							<li class='active'><a href="/">Home</a></li>
 							<sec:authorize access="hasRole('Admin')">
 								<li class='active'><a href="/administration/users">Users</a></li>
+								<li class='active'><a href="/administration/categories">Categories</a></li>
 							</sec:authorize>
-							<li><a href="single.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<%--<li><a href="single.html">About</a></li>--%>
+							<%--<li><a href="contact.html">Contact</a></li>--%>
 							<sec:authorize access="isAuthenticated()">
-								<li><a href="/login?logout">Logout</a></li>
+								<li><a href="/logout">Logout</a></li>
 							</sec:authorize>
 							<sec:authorize access="isAnonymous()">
 								<li><a href="/login">Login</a></li>

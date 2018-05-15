@@ -22,7 +22,7 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryDao categoryDao;
 
     @Override
-    public List<Category> getAllCategories(Predicate predicate, Pageable pageable) {
+    public List<Category> findAll(Predicate predicate, Pageable pageable) {
         List<Category> categories = new LinkedList<>();
         for(TblAPLCategoryEntity tblAPLCategoryEntity:
             tblAPLCategoryEntityDao.findAll(predicate, pageable)){

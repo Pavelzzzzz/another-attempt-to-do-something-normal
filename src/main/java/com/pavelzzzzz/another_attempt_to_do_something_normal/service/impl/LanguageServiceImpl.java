@@ -22,7 +22,7 @@ public class LanguageServiceImpl implements LanguageService {
     private LanguageDao languageDao;
 
     @Override
-    public List<Language> getAllLanguages(Predicate predicate, Pageable pageable) {
+    public List<Language> findAll(Predicate predicate, Pageable pageable) {
         List<Language> languages = new LinkedList<>();
         for (TblSERLanguageEntity tblSERLanguageEntity:
             tblSERLanguageEntityDao.findAll(predicate, pageable)){
