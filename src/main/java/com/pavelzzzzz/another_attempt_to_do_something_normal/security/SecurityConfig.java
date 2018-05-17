@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder bcryptPasswordEncoder() {
+    public PasswordEncoder getBCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -44,6 +44,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .userDetailsService(userSecurityService)
-                .passwordEncoder(bcryptPasswordEncoder());
+                .passwordEncoder(getBCryptPasswordEncoder());
     }
 }

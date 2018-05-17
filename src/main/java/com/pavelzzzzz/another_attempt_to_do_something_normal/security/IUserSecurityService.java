@@ -4,4 +4,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface IUserSecurityService extends UserDetailsService {
 
+  int registrationNewUser(String username, String email, String password);
+
 }

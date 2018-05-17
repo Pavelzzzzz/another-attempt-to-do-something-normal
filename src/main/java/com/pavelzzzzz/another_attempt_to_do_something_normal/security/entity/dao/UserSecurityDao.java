@@ -2,12 +2,12 @@ package com.pavelzzzzz.another_attempt_to_do_something_normal.security.entity.da
 
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblSECUserEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.security.entity.UserSecurity;
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 
 public interface UserSecurityDao {
 
   UserSecurity toEntity(@NotBlank TblSECUserEntity tblSECUserEntity);
 
-//  TblSECUserEntity fromEntity (User user);
+  TblSECUserEntity fromEntity (UserSecurity user);
 
 }

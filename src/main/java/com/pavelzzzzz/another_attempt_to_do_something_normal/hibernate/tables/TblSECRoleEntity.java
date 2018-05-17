@@ -27,6 +27,14 @@ public class TblSECRoleEntity{
     inverseJoinColumns = @JoinColumn(name = "UserId"))
     private List<TblSECUserEntity> listUserEntity;
 
+    public TblSECRoleEntity() {
+    }
+
+    public TblSECRoleEntity(int roleId, @NotBlank String role) {
+        this.roleId = roleId;
+        this.role = role;
+    }
+
     public int getRoleId() {
         return roleId;
     }

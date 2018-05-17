@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public class UserSecurity implements UserDetails {
 
-  private int userId;
+  private Integer userId;
   private String username;
   private String email;
   private String password;
@@ -20,7 +20,7 @@ public class UserSecurity implements UserDetails {
   public UserSecurity() {
   }
 
-  public UserSecurity(int userId, String username, String email, String password,
+  public UserSecurity(Integer userId, String username, String email, String password,
                       Collection<Role> authorities, boolean enabled, boolean accountNonExpired,
                       boolean accountNonLocked, boolean credentialsNonExpired) {
     this.userId = userId;

@@ -10,6 +10,7 @@ import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.Tb
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblDESTextTranslationEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblSERLanguageEntity;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.security.impl.UserSecurityService;
 import javax.transaction.Transactional;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -37,6 +38,8 @@ public class NewsServiceImplTest {
   private TblSECUserEntityDao tblSECUserEntityDao;
   @Autowired
   private TblAPLCategoryEntityDao tblAPLCategoryEntityDao;
+  @Autowired
+  private UserSecurityService userSecurityService;
 
   private final String htmlText = "qqqqqqqqqqq<div>wwwwwwwwwwww</div><div>eeeeee</div>"
       + "<div style=\"text-align: center;\">"
@@ -105,5 +108,13 @@ public class NewsServiceImplTest {
 //      @NotBlank TblSECUserEntity tblSECUserEntity,
 //      @NotBlank int titleId,
 //      @NotBlank String htmlArchitecture)
+
+  @Test
+  public void registrationNewUser(){
+    userSecurityService.registrationNewUser(
+        "testUsernamee",
+        "testEmaill",
+        "password");
+  }
 
 }

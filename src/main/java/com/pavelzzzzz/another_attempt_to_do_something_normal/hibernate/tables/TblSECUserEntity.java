@@ -1,6 +1,7 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,14 +20,13 @@ public class TblSECUserEntity{
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int userId;
+    private Integer userId;
     @NotBlank
     private String username;
     @NotBlank
     private String email;
-    @NotBlank
     private boolean enabled;
-    @OneToOne(mappedBy = "tblSECUserEntity", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "tblSECUserEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private TblSECPasswordEntity tblSECPasswordEntity;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "tblSECUserRole",
@@ -40,7 +40,7 @@ public class TblSECUserEntity{
     public TblSECUserEntity(
         @NotBlank String username,
         @NotBlank String email,
-        @NotBlank boolean enabled,
+        boolean enabled,
         TblSECPasswordEntity tblSECPasswordEntity,
         List<TblSECRoleEntity> listRoleEntity) {
         this.username = username;
@@ -50,11 +50,11 @@ public class TblSECUserEntity{
         this.listRoleEntity = listRoleEntity;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

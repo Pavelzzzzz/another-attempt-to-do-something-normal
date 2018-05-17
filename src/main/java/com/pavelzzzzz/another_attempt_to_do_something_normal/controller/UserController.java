@@ -1,15 +1,19 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.controller;
 
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblSECUserEntity;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.security.impl.UserSecurityService;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.UserService;
 import com.querydsl.core.types.Predicate;
 import org.springframework.data.domain.Pageable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.querydsl.binding.QuerydslPredicate;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(path = "api/administration/users")
@@ -17,11 +21,24 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private UserSecurityService userSecurityService;
 
     @GetMapping("")
     public ResponseEntity<?> findAllUser(
             @QuerydslPredicate(root = TblSECUserEntity.class) Predicate predicate, Pageable pageable) {
         return ResponseEntity.ok(userService.findAll(predicate, pageable));
+    }
+
+    @PostMapping()
+    public ResponseEntity<?> registrationNewUser(
+        @RequestParam String username,
+        @RequestParam String email,
+        @RequestParam String password
+    ){
+        int newUserId = userSecurityService.registrationNewUser(username,
+            email, password);
+        return ResponseEntity.ok(newUserId);
     }
 
 //    @GetMapping("/")
