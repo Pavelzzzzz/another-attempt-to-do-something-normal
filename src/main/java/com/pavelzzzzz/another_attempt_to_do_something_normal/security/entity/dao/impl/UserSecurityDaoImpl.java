@@ -27,6 +27,7 @@ public class UserSecurityDaoImpl implements UserSecurityDao {
         tblSECUserEntity.getUsername(),
         tblSECUserEntity.getEmail(),
         tblSECUserEntity.getTblSECPasswordEntity().getPassword(),
+        null,
         roles,
         tblSECUserEntity.isEnabled(),
         true,

@@ -11,6 +11,7 @@ public class UserSecurity implements UserDetails {
   private String username;
   private String email;
   private String password;
+  private String passwordConfirm;
   private Collection<Role> authorities;
   private boolean enabled;
   private boolean accountNonExpired;
@@ -21,12 +22,14 @@ public class UserSecurity implements UserDetails {
   }
 
   public UserSecurity(Integer userId, String username, String email, String password,
-                      Collection<Role> authorities, boolean enabled, boolean accountNonExpired,
-                      boolean accountNonLocked, boolean credentialsNonExpired) {
+      String passwordConfirm,
+      Collection<Role> authorities, boolean enabled, boolean accountNonExpired,
+      boolean accountNonLocked, boolean credentialsNonExpired) {
     this.userId = userId;
     this.username = username;
     this.email = email;
     this.password = password;
+    this.passwordConfirm = passwordConfirm;
     this.authorities = authorities;
     this.enabled = enabled;
     this.accountNonExpired = accountNonExpired;
@@ -66,6 +69,14 @@ public class UserSecurity implements UserDetails {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  public String getPasswordConfirm() {
+    return passwordConfirm;
+  }
+
+  public void setPasswordConfirm(String passwordConfirm) {
+    this.passwordConfirm = passwordConfirm;
   }
 
   @Override

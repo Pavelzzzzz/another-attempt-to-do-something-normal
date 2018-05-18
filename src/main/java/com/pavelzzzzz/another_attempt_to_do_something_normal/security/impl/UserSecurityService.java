@@ -42,6 +42,7 @@ public class UserSecurityService implements IUserSecurityService {
             username,
             email,
             encoder.encode(password),
+            null,
             Collections.singletonList(Role.User),
             true,
             true,
