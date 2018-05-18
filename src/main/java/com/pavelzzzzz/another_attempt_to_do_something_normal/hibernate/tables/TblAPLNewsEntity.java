@@ -21,15 +21,12 @@ public class TblAPLNewsEntity {
     private int newsId;
     @NotNull
     @ManyToOne(optional = false)
-            //    mappedBy = "tblSERLanguageEntity",
-//            cascade = CascadeType.ALL)
     @JoinColumn(name = "CategoryId")
     private TblAPLCategoryEntity tblAPICategoryEntity;
     private Timestamp createdAt;
     private Timestamp updatedAt;
     @NotNull
     @ManyToOne(optional = false)
-//            cascade = CascadeType.ALL)
     @JoinColumn(name = "CreatedBy")
     private TblSECUserEntity tblSECUserEntity;
     @NotNull

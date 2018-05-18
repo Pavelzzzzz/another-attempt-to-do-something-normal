@@ -109,12 +109,12 @@ public class NewsServiceImplTest {
 //      @NotBlank int titleId,
 //      @NotBlank String htmlArchitecture)
 
-  @Test
-  public void registrationNewUser(){
-    userSecurityService.registrationNewUser(
-        "testUsernamee",
-        "testEmaill",
-        "password");
-  }
+//  @Test
+//  public void registrationNewUser(){
+//    userSecurityService.registrationNewUser(
+//        "testUsernamee",
+//        "testEmaill",
+//        "password");
+//  }
 
 }

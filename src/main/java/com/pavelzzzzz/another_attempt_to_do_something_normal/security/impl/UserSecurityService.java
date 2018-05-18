@@ -10,7 +10,6 @@ import java.util.Collections;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -36,21 +35,16 @@ public class UserSecurityService implements IUserSecurityService {
     }
 
     @Override
-    public int registrationNewUser(String username, String email, String password) {
-        UserSecurity newUserSecurity = new UserSecurity(
-            null,
-            username,
-            email,
-            encoder.encode(password),
-            null,
-            Collections.singletonList(Role.User),
-            true,
-            true,
-            true,
-            true);
-
+    public int save(UserSecurity newUserSecurity) {
+        newUserSecurity.setPassword(encoder.encode(newUserSecurity.getPassword()));
+        newUserSecurity.setAuthorities(Collections.singletonList(Role.User));
+        newUserSecurity.setEnabled(true);
+        newUserSecurity.setAccountNonExpired(true);
+        newUserSecurity.setAccountNonLocked(true);
+        newUserSecurity.setCredentialsNonExpired(true);
         TblSECUserEntity newTblSECUserEntity = tblSECUserEntityDao.save(
             userSecurityDao.fromEntity(newUserSecurity));
         return newTblSECUserEntity.getUserId();
     }
+
 }

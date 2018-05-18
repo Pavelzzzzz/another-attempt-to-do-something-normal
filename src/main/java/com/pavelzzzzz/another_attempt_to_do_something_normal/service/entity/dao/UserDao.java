@@ -7,7 +7,4 @@ import javax.validation.constraints.NotBlank;
 public interface UserDao {
 
   User toEntity(@NotBlank TblSECUserEntity tblSECUserEntity);
-
-//  TblSECUserEntity fromEntity (User user);
-
 }

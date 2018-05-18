@@ -14,6 +14,10 @@ public class UserDaoImpl implements UserDao {
 
   @Override
   public User toEntity(TblSECUserEntity tblSECUserEntity) {
+    if (tblSECUserEntity == null) {
+      return null;
+    }
+
     Collection<Role> roles = new HashSet<>();
     for (TblSECRoleEntity tblSECRoleEntity :
         tblSECUserEntity.getListRoleEntity()){
@@ -30,9 +34,4 @@ public class UserDaoImpl implements UserDao {
         true,
         true);
   }
-
-//  @Override
-//  public TblSECUserEntity fromEntity(User user) {
-//    return null;
-//  }
 }

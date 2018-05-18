@@ -33,16 +33,6 @@ public interface TblDESTextTranslationEntityDao
         @Param("languageId") int languageId,
         @Param("textTranslation") String textTranslation);
 
-
-//    @Procedure(name = "create_tblDESTextTranslationEntity")
-//    TblDESTextTranslationEntity create_tblDESTextTranslationEntity(@Param(
-//        "textId") int textId, @Param("languageId") int languageId, @Param("textTranslation") String textTranslation);
-
-    //    TblDESTextTranslationEntity getTextTranslationByTextIdAndAndLanguageId(
-//        int textId, int languageId);
-
-    //    TblDESTextTranslationEntity getTextTranslationByTextId(int textId);
-
     @Override
     default void customize(QuerydslBindings querydslBindings,
         QTblDESTextTranslationEntity qTblDESTextTranslationEntity){

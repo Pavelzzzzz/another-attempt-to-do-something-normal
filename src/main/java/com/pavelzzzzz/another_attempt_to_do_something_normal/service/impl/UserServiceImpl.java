@@ -31,20 +31,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByUserId(int userId) {
+    public User getByUserId(int userId) {
         return userDao.toEntity(tblSECUserEntityDao.getByUserId(userId));
     }
 
-//    @Override
-//    public synchronized boolean addUser(UserEntity user){
-////        if (userDAO.articleExists(article.getTitle(), article.getCategory())) {
-////            return false;
-////        } else {
-//            userDAO.save(user);
-//            return true;
-////        }
-//    }
-//
+    @Override
+    public User getByUsername(String username) {
+        return userDao.toEntity(tblSECUserEntityDao.getByUsername(username));
+    }
+
 //    @Override
 //    public void updateUser(UserEntity userEntity) {
 //        userDAO.updateUser(userEntity);

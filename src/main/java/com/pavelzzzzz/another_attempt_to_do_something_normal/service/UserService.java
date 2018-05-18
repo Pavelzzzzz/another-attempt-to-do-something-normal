@@ -10,9 +10,9 @@ public interface UserService {
 
     List<User> findAll(Predicate predicate, Pageable pageable);
 
-    User getUserByUserId(@NotBlank int userId);
+    User getByUserId(@NotBlank int userId);
 
-//    boolean addUser(UserEntity user);
+    User getByUsername(String username);
 //
 //    void updateUser(UserEntity userEntity);
 //

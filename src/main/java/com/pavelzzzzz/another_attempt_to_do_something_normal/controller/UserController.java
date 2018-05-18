@@ -30,16 +30,16 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll(predicate, pageable));
     }
 
-    @PostMapping()
-    public ResponseEntity<?> registrationNewUser(
-        @RequestParam String username,
-        @RequestParam String email,
-        @RequestParam String password
-    ){
-        int newUserId = userSecurityService.registrationNewUser(username,
-            email, password);
-        return ResponseEntity.ok(newUserId);
-    }
+//    @PostMapping()
+//    public ResponseEntity<?> registrationNewUser(
+//        @RequestParam String username,
+//        @RequestParam String email,
+//        @RequestParam String password
+//    ){
+//        int newUserId = userSecurityService.registrationNewUser(username,
+//            email, password);
+//        return ResponseEntity.ok(newUserId);
+//    }
 
 //    @GetMapping("/")
 //    public ResponseEntity<List<TblSECUserEntity>> getAllUser() {
