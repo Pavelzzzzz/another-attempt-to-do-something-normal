@@ -23,7 +23,7 @@ public class NewsController {
     @Autowired
     private NewsService newsService;
 
-    @GetMapping("")
+    @GetMapping
     public ResponseEntity<?> findAllNews(
             @QuerydslPredicate(root = TblAPLNewsEntity.class) Predicate predicate, Pageable pageable) {
         return ResponseEntity.ok(newsService.findAll(predicate, pageable));
@@ -38,7 +38,7 @@ public class NewsController {
         return new ResponseEntity<News>(news, HttpStatus.OK);
     }
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<?> addNews(
             @RequestParam int languageId,
             @RequestParam int categoryId,

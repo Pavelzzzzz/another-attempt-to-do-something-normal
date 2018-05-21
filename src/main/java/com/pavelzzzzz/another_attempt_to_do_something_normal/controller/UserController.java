@@ -24,22 +24,11 @@ public class UserController {
     @Autowired
     private UserSecurityService userSecurityService;
 
-    @GetMapping("")
+    @GetMapping
     public ResponseEntity<?> findAllUser(
             @QuerydslPredicate(root = TblSECUserEntity.class) Predicate predicate, Pageable pageable) {
         return ResponseEntity.ok(userService.findAll(predicate, pageable));
     }
-
-//    @PostMapping()
-//    public ResponseEntity<?> registrationNewUser(
-//        @RequestParam String username,
-//        @RequestParam String email,
-//        @RequestParam String password
-//    ){
-//        int newUserId = userSecurityService.registrationNewUser(username,
-//            email, password);
-//        return ResponseEntity.ok(newUserId);
-//    }
 
 //    @GetMapping("/")
 //    public ResponseEntity<List<TblSECUserEntity>> getAllUser() {

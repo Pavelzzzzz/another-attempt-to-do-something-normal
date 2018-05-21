@@ -86,7 +86,7 @@ header .logo img{display: inline-block;margin: auto;padding: 10px;max-width: 210
 #container {}
 #container .wrap-container{}
 
-.header { margin: 10px 0 ;}
+.header { margin: 10px 0;}
 .header h2{font-size: 27px;letter-spacing: 2px;}
 .header h1{font-size: 36px;letter-spacing: 2px;margin: 40px 5px 15px;line-height: 1.1;}
 
@@ -124,13 +124,16 @@ article .art-content{}
 #sidebar{}
 #sidebar .wrap-sidebar{margin: 0px 10px ;}
 
-.widget {margin-bottom: 30px;padding: 0 20px;}
+.widget {padding: 0 20px;}
 .widget ul li { line-height: 2.8;border-bottom: 2px solid #DDD;}
 .widget:after, .widget:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
 
 .widget .wid-header, .registration-header {background-color: #2D88CF;padding: 15px 20px; margin: 10px 0 30px}
 .widget .wid-header h5, .registration-header h5 {font-size: 17px;color: #fff;text-transform: uppercase;}
 .widget .wid-content{padding: 20px;background-color: #fff;}
+.widget .wid-header-information {background-color: #2D88CF; padding: 10px 15px; margin: 10px 0}
+.widget .wid-content-information{padding: 5px; background-color: #fff;}
+.news-header{padding: 40px}
 
 .post:after, .post:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
 .post img{float: left; margin: 15px 10px; width: 100px;}
@@ -173,7 +176,7 @@ a.button.bt2 {background: #0000ff;color: #ffffff;}
 /* -------------------------------------Contact-------------------------------- */
 /* ---------------------------------------------------------------------------- */
 .contact h2{}
-#contact_form {padding: 10px 25px 25px;background: #fff;box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3); margin:20px;}
+#contact_form {padding: 10px 25px 25px;background: #fff;box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3); float: none; margin:20px auto;}
 
 #ff label {cursor:pointer;display:block;font-weight:bold;}
 
@@ -309,6 +312,10 @@ a.button.bt2 {background: #0000ff;color: #ffffff;}
 }
 .item:hover .item-container .item-caption span{
 	display: block;
+}
+
+.item-news{
+  padding: 30px;
 }
 /* ---------------------------------------------------------------------------- */
 /* ------------------------------------Menu------------------------------------ */
@@ -689,4 +696,7 @@ table th, table td{
   border: 1px solid maroon;
 }
 
+.form-control{
+  margin: 15px 0 15px;
+}
 

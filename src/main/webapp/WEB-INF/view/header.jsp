@@ -19,6 +19,7 @@
 	<!-- CSS
   ================================================== -->
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/zerogrid.css">
 
 </head>
 
@@ -44,6 +45,7 @@
 							</sec:authorize>
 							<sec:authorize access="isAnonymous()">
 								<li><a href="/login">Login</a></li>
+								<li><a href="/registration">Registration</a></li>
 							</sec:authorize>
 						</ul>
 					</div>
