@@ -4,7 +4,7 @@ function set_data_and_load(param, order) {
   clearTable($("#tableOfUsers")[0]);
   var dataForLoad = {};
   dataForLoad["page"] = 0;
-  dataForLoad["size"] = 2;
+  dataForLoad["size"] = 5;
   dataForLoad["sort"] = param + ',' + order;
   sessionStorage.setItem("dataForLoad", JSON.stringify(dataForLoad));
   get_users();

@@ -9,7 +9,7 @@ function save_news() {
     console.log("saving news");
 
     var saveNewsRequestBody = {};
-    saveNewsRequestBody["languageId"] = 2;
+    saveNewsRequestBody["languageId"] = 1;
     saveNewsRequestBody["categoryId"] = 1;
     saveNewsRequestBody["userId"] = 1;
     saveNewsRequestBody["title"] = "js test news";
@@ -17,7 +17,7 @@ function save_news() {
 
     $.ajax({
         type: "POST",
-        url: "/api/administration/news",
+        url: "/api/news",
         data: saveNewsRequestBody,
         dataType: 'json',
         success: function (data) {

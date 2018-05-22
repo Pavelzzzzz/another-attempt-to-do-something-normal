@@ -11,7 +11,7 @@ article, aside, audio, canvas, command, datalist, details, embed, figcaption, fi
 mark, rp, rt, ruby, summary, time {display:inline;}
 input, textarea {border:0; padding:0; margin:0; outline: 0;}
 iframe {border:0; margin:0; padding:0;}
-input, textarea, select {margin:0; padding:0px;}
+input, textarea, select {margin:0; padding:0px; color: #3F3F3F;}
 
 
 /* ---------------------------------------------------------------------------- */

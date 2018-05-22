@@ -21,7 +21,7 @@ public class MainController {
     @GetMapping("/news/{id}")
     public String getNews(@PathVariable("id") int id, Model model){
         model.addAttribute("news",
-            newsService.getNewsByNewsIdAndLanguageId(id, 2));
+            newsService.getNewsByNewsIdAndLanguageId(id, 1));
         return "news";
     }
 

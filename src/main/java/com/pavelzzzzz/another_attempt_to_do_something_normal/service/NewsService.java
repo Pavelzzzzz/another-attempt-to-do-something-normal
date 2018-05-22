@@ -12,6 +12,4 @@ public interface NewsService {
 
   int saveNews(int languageId, int categoryId,
                int userId, String title, String htmlText);
-
-  List<News> findAll(Predicate predicate, Pageable pageable);
 }

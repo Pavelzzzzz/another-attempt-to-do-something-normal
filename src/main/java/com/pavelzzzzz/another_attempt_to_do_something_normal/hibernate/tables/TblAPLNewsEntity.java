@@ -1,7 +1,6 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables;
 
 import java.sql.Timestamp;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,6 +31,7 @@ public class TblAPLNewsEntity {
     @NotNull
     private int titleId;
     @NotBlank
+//    @Basic(fetch = FetchType.LAZY)
     private String htmlArchitecture;
 
     public TblAPLNewsEntity() {
