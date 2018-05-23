@@ -7,4 +7,6 @@ import javax.validation.constraints.NotBlank;
 public interface CategoryDao {
 
   Category toEntity(@NotBlank TblAPLCategoryEntity tblAPICategoryEntity);
+
+  TblAPLCategoryEntity fromEntity(@NotBlank Category category);
 }

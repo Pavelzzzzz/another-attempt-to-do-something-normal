@@ -11,10 +11,4 @@ public class AdministrationPageController {
   public String getUsersPage(){
     return "administration/users";
   }
-
-  @RequestMapping("/categories")
-  public String getCategoriesPage(){
-    return "administration/categories";
-  }
-
 }

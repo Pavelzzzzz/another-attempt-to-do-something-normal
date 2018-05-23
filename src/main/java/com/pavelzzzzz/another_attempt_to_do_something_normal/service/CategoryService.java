@@ -8,7 +8,9 @@ import org.springframework.data.domain.Pageable;
 
 public interface CategoryService {
 
-    List<Category> findAll(Predicate predicate, Pageable pageable);
+  List<Category> findAll(Predicate predicate, Pageable pageable);
 
-    Category getCategoryByCategoryId(@NotBlank int categoryId);
+  Category getCategoryByCategoryId(@NotBlank int categoryId);
+
+  int save(Category category);
 }

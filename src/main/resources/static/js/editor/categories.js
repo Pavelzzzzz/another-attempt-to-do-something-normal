@@ -22,7 +22,7 @@ function get_categories() {
 
   $.ajax({
     type: "GET",
-    url: "/api/administration/categories",
+    url: "/api/categories",
     data: JSON.parse(sessionStorage.getItem("dataForLoad")),
     dataType: 'json',
     success: function (data) {
@@ -48,4 +48,28 @@ function clearTable(table) {
     table.deleteRow(1);
   }
   
+}
+
+function save_category() {
+  console.log("save new category");
+
+  var saveCategoryRequestBody = {};
+  saveCategoryRequestBody["categoryName"] = $("#category-name")[0].value;
+
+  $.ajax({
+    type: "POST",
+    url: "/api/categories",
+    data: saveCategoryRequestBody,
+    dataType: 'json',
+    success: function (data) {
+      if (data != "false") {
+        //console.log(JSON.stringify(data));
+        console.log(data);
+        set_data_and_load("categoryId", "");
+      }
+    },
+    error: function (error) {
+      console.log("Error: " + error.status);
+    }
+  });
 }

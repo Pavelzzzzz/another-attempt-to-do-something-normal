@@ -77,7 +77,7 @@ function get_categories() {
 
   $.ajax({
     type: "GET",
-    url: "/api/administration/categories",
+    url: "/api/categories",
     dataType: 'json',
     success: function (data) {
       if (data != "false") {

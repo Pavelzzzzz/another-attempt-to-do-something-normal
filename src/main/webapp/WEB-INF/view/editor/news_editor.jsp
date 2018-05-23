@@ -14,19 +14,55 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
      <![endif]-->
 
+    <div class="bg-theme">
+        <div class="filter zerogrid">
+            <h2 class="t-center">News editor</h2>
+            <div class="row">
+                <div class="col-1-3 f-right">
+                    <div class="col-2-3">
+                        <div class="wrap-col">
+                            <span>Category name :</span><br/>
+                            <input id="category-name" type="text" class="form-control" placeholder="Category name"
+                                   autofocus="true"/>
+                        </div>
+                    </div>
+                    <div class="col-1-3">
+                        <div class="wrap-col">
+                            <br/>
+                            <a class="button bt1" onclick="save_category()">Save</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2-3">
+                    <div class="wrap-col">
+                        <span>Title :</span><br/>
+                        <input id="news-title" type="text" class="form-control" placeholder="Title"
+                               autofocus="true"/>
+                    </div>
+                </div>
+                <div class="col-1-3">
+                    <div class="wrap-col">
+                        <span>Categories :</span><br/>
+                        <select id="select-categories">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
   <section id="container">
       <div class="wrap-container clearfix">
           <div id="main-content">
               <div class="wrap-box t-center" ><!--Start Box-->
-                  <div class="header">
-                      <h4>News editor</h4>
-                  </div>
-                  <div class="t-left" style="background: #fff; box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3); margin:20px;">
-                      <div class="row" >
-                          <div class="item-info" style="margin: 0 25px 10px;">
-                              <textarea id="txtedit"></textarea>
+                  <div class="item-edit t-left">
+                      <div class="row">
+                          <div class="item-info item-info-edit">
+                              <textarea id="text-edit"></textarea>
                           </div>
-                          <a class="button bt1" onclick="save_news()" style="float:right; margin:5px 30px 15px;">Save</a>
+                          <a id="button-save" class="button bt1" onclick="save_news()">Save</a>
                       </div>
                   </div>
               </div>

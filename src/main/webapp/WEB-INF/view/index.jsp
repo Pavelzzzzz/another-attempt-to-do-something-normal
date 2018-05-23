@@ -7,52 +7,43 @@
 		<div class="filter zerogrid">
 			<h2 class="t-center">Find the news that interests you</h2>
 			<div class="row">
-				<div class="col-1-4">
-					<div class="wrap-col">
-						<span>Categories :</span><br/>
-						<select id="select-categories">
-							<option>--ALL--</option>
-						</select>
+				<div class="col-1-3 f-right">
+					<div class="col-1-2">
+						<div class="wrap-col">
+							<span>Categories :</span><br/>
+							<select id="select-categories">
+								<option>--ALL--</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<%--<div class="col-1-4">--%>
+					<%--<div class="col-1-4">--%>
 					<%--<div class="wrap-col">--%>
-						<%--<span>Modal :</span><br/>--%>
-						<%--<select>--%>
-							<%--<option>--ALL--</option>--%>
-							<%--<option>Aston martin</option>--%>
-							<%--<option>Audi</option>--%>
-							<%--<option>Bentley</option>--%>
-							<%--<option>Bmw</option>--%>
-							<%--<option>Cadillac</option>--%>
-							<%--<option>Chevrolet</option>--%>
-							<%--<option>Citroen</option>--%>
-							<%--<option>Dacia</option>--%>
-							<%--<option>Dodge</option>--%>
-							<%--<option>Ferrari</option>--%>
-							<%--<option>Ford</option>--%>
-							<%--<option>Gmc</option>--%>
-							<%--<option>Hyundai</option>--%>
-							<%--<option>Jaguar</option>--%>
-							<%--<option>Lexus</option>--%>
-						<%--</select>--%>
+					<%--<span>Modal :</span><br/>--%>
+					<%--<select>--%>
+					<%--<option>--ALL--</option>--%>
+					<%--<option>Aston martin</option>--%>
+					<%--<option>Audi</option>--%>
+					<%--<option>Bentley</option>--%>
+					<%--<option>Bmw</option>--%>
+					<%--<option>Cadillac</option>--%>
+					<%--<option>Chevrolet</option>--%>
+					<%--<option>Citroen</option>--%>
+					<%--<option>Dacia</option>--%>
+					<%--<option>Dodge</option>--%>
+					<%--<option>Ferrari</option>--%>
+					<%--<option>Ford</option>--%>
+					<%--<option>Gmc</option>--%>
+					<%--<option>Hyundai</option>--%>
+					<%--<option>Jaguar</option>--%>
+					<%--<option>Lexus</option>--%>
+					<%--</select>--%>
 					<%--</div>--%>
-				<%--</div>--%>
-				<%--<div class="col-1-4">--%>
-					<%--<div class="wrap-col">--%>
-						<%--<span>Price :</span><br/>--%>
-						<%--<select>--%>
-							<%--<option>--ALL--</option>--%>
-							<%--<option>0-1000</option>--%>
-							<%--<option>1000-5000</option>--%>
-							<%--<option>5000-10000</option>--%>
-						<%--</select>--%>
 					<%--</div>--%>
-				<%--</div>--%>
-				<div class="col-1-4">
-					<div class="wrap-col">
-						<br>
-						<a class="button bt1" onclick="search_news_headers('newsId', '')">Search</a>
+					<div class="col-1-2">
+						<div class="wrap-col">
+							<br>
+							<a class="button bt1" onclick="search_news_headers('newsId', '')">Search</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -78,7 +69,7 @@
 	</section>
 
 	<button style="display: block;  margin: 0 auto;" onclick="load_new_page()">
-		<img src="/images/administration/arrow_down_40.png">
+		<img src="/images/arrow_down_40.png">
 	</button>
 
 	<script src="/js/index.js"></script>

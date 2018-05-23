@@ -37,7 +37,7 @@
 	</section>
 
 	<button style="display: block;  margin: 0 auto;" onclick="load_new_page()">
-		<img src="/images/administration/arrow_down_40.png">
+		<img src="/images/arrow_down_40.png">
 	</button>
 
 	<script src="/js/administration/users.js"></script>

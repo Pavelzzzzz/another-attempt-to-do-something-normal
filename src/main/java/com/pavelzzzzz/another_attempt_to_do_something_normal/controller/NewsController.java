@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "api/news")
+@RequestMapping(path = "api/editor/news")
 public class NewsController {
 
     @Autowired
@@ -21,10 +21,10 @@ public class NewsController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getNewsById(
-            @PathVariable("id") int newsId,
-            @RequestParam(defaultValue = "1") int languageId) {
+        @PathVariable("id") int newsId,
+        @RequestParam(defaultValue = "1") int languageId) {
         News news = newsService.getNewsByNewsIdAndLanguageId(
-                newsId, languageId);
+            newsId, languageId);
         return new ResponseEntity<News>(news, HttpStatus.OK);
     }
 
@@ -35,7 +35,7 @@ public class NewsController {
             @RequestParam int userId,
             @RequestParam String title,
             @RequestParam String htmlText){
-        int newsId = newsService.saveNews(languageId, categoryId, userId, title, htmlText);
+        int newsId = newsService.save(languageId, categoryId, userId, title, htmlText);
         return new ResponseEntity<Integer>(newsId, HttpStatus.OK);
     }
 }

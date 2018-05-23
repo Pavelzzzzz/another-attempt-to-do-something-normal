@@ -34,6 +34,9 @@
 					<div id="cssmenu">
 						<ul>
 							<li class='active'><a href="/">Home</a></li>
+							<sec:authorize access="hasRole('User') or hasRole('Admin')">
+								<li><a href="/editor/news_editor">News editor</a></li>
+							</sec:authorize>
 							<sec:authorize access="hasRole('Admin')">
 								<li class='active'><a href="/administration/users">Users</a></li>
 								<li class='active'><a href="/administration/categories">Categories</a></li>

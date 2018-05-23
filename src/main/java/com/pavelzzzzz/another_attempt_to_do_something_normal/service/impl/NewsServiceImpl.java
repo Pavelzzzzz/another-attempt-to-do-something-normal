@@ -67,7 +67,7 @@ public class NewsServiceImpl implements NewsService {
   }
 
   @Override
-  public int saveNews(int languageId, int categoryId,
+  public int save(int languageId, int categoryId,
                       int userId, String title, String htmlText){
 
     Document html = Jsoup.parse(htmlText);

@@ -15,4 +15,11 @@ public class CategoryDaoImpl implements CategoryDao{
         tblAPICategoryEntity.getCategoryId(),
         tblAPICategoryEntity.getCategoryName());
   }
+
+  @Override
+  public TblAPLCategoryEntity fromEntity(@NotBlank Category category) {
+    TblAPLCategoryEntity tblAPLCategoryEntity = new TblAPLCategoryEntity();
+    tblAPLCategoryEntity.setCategoryName(category.getCategoryName());
+    return tblAPLCategoryEntity;
+  }
 }

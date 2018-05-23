@@ -317,6 +317,16 @@ a.button.bt2 {background: #0000ff;color: #ffffff;}
 .item-news{
   padding: 30px;
 }
+
+.item-edit{
+  background: #fff;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+  margin:20px;
+}
+
+.item-info-edit{
+  margin: 0 25px 10px;
+}
 /* ---------------------------------------------------------------------------- */
 /* ------------------------------------Menu------------------------------------ */
 /* ---------------------------------------------------------------------------- */
@@ -432,6 +442,11 @@ a.button.bt2 {background: #0000ff;color: #ffffff;}
 #cssmenu ul ul li:hover > a,
 #cssmenu ul ul li a:hover {
   color: #ffffff;
+}
+
+#button-save{
+  float:right;
+  margin:5px 30px 15px;
 }
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
@@ -697,6 +712,6 @@ table th, table td{
 }
 
 .form-control{
-  margin: 15px 0 15px;
+  margin: 10px 0 15px;
 }
 

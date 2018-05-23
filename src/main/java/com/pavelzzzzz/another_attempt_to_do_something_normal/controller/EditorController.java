@@ -12,4 +12,9 @@ public class EditorController {
     return "editor/news_editor";
   }
 
+  @RequestMapping("/categories")
+  public String getCategoriesPage(){
+    return "editor/categories";
+  }
+
 }
