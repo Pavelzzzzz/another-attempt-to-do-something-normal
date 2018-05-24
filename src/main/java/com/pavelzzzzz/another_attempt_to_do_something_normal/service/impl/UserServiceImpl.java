@@ -40,7 +40,12 @@ public class UserServiceImpl implements UserService {
         return userDao.toEntity(tblSECUserEntityDao.getByUsername(username));
     }
 
-//    @Override
+    @Override
+    public void delete(int userId) {
+        tblSECUserEntityDao.deleteById(userId);
+    }
+
+    //    @Override
 //    public void updateUser(UserEntity userEntity) {
 //        userDAO.updateUser(userEntity);
 //    }

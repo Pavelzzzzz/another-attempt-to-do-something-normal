@@ -8,13 +8,15 @@ import org.springframework.data.domain.Pageable;
 
 public interface UserService {
 
-    List<User> findAll(Predicate predicate, Pageable pageable);
+  List<User> findAll(Predicate predicate, Pageable pageable);
 
-    User getByUserId(@NotBlank int userId);
+  User getByUserId(@NotBlank int userId);
 
-    User getByUsername(String username);
-//
+  User getByUsername(String username);
+
+  void delete(int userId);
+
 //    void updateUser(UserEntity userEntity);
 //
-//    void deleteUser(int userId);
+
 }

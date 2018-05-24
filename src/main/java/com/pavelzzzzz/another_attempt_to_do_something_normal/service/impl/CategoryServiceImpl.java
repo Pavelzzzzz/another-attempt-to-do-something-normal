@@ -42,4 +42,10 @@ public class CategoryServiceImpl implements CategoryService {
         return tblAPLCategoryEntityDao.save(
             categoryDao.fromEntity(category)).getCategoryId();
     }
+
+    @Override
+    public void delete(int categoryId) {
+        tblAPLCategoryEntityDao.delete(
+            tblAPLCategoryEntityDao.getByCategoryId(categoryId));
+    }
 }

@@ -36,10 +36,10 @@
 							<li class='active'><a href="/">Home</a></li>
 							<sec:authorize access="hasRole('User') or hasRole('Admin')">
 								<li><a href="/editor/news_editor">News editor</a></li>
+								<li class='active'><a href="/editor/categories">Categories</a></li>
 							</sec:authorize>
 							<sec:authorize access="hasRole('Admin')">
 								<li class='active'><a href="/administration/users">Users</a></li>
-								<li class='active'><a href="/administration/categories">Categories</a></li>
 							</sec:authorize>
 							<%--<li><a href="single.html">About</a></li>--%>
 							<%--<li><a href="contact.html">Contact</a></li>--%>

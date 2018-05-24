@@ -13,4 +13,6 @@ public interface CategoryService {
   Category getCategoryByCategoryId(@NotBlank int categoryId);
 
   int save(Category category);
+
+  void delete(int categoryId);
 }

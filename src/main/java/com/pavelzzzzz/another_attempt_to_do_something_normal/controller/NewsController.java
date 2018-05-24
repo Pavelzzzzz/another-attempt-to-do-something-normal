@@ -36,6 +36,6 @@ public class NewsController {
             @RequestParam String title,
             @RequestParam String htmlText){
         int newsId = newsService.save(languageId, categoryId, userId, title, htmlText);
-        return new ResponseEntity<Integer>(newsId, HttpStatus.OK);
+        return new ResponseEntity<Integer>(newsId, HttpStatus.CREATED);
     }
 }

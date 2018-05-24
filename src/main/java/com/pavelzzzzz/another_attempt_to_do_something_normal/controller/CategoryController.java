@@ -10,7 +10,9 @@ import org.springframework.http.ResponseEntity;
 import com.querydsl.core.types.Predicate;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,6 +36,13 @@ public class CategoryController {
     Category newCategory = new Category();
     newCategory.setCategoryName(categoryName);
     int categoryId = categoryService.save(newCategory);
-    return new ResponseEntity<Integer>(categoryId, HttpStatus.OK);
+    return new ResponseEntity<Integer>(categoryId, HttpStatus.CREATED);
+  }
+
+  @DeleteMapping("/{id}")
+  public ResponseEntity<?> deleteCategory(
+      @PathVariable("id") int id){
+        categoryService.delete(id);
+        return new ResponseEntity(HttpStatus.OK);
   }
 }
