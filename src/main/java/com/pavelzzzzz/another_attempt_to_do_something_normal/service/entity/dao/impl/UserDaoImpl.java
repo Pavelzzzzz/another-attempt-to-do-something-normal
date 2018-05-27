@@ -7,6 +7,8 @@ import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.dao.UserDao;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,7 +20,7 @@ public class UserDaoImpl implements UserDao {
       return null;
     }
 
-    Collection<Role> roles = new HashSet<>();
+    List<Role> roles = new LinkedList<>();
     for (TblSECRoleEntity tblSECRoleEntity :
         tblSECUserEntity.getListRoleEntity()){
       roles.add(Role.fromId(tblSECRoleEntity.getRoleId()));
@@ -29,9 +31,6 @@ public class UserDaoImpl implements UserDao {
         tblSECUserEntity.getUsername(),
         tblSECUserEntity.getEmail(),
         roles,
-        tblSECUserEntity.isEnabled(),
-        true,
-        true,
-        true);
+        tblSECUserEntity.isEnabled());
   }
 }

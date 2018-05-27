@@ -48,17 +48,17 @@ function get_news_headers() {
         console.log(data);
         for (var i = 0; i < data.length; i++ ){
           $("#news-headers-row").append(
-              '<div class="col-1-3">' +
-                '<div class="wrap-col">' +
-                  '<div class="item t-center">' +
-                    '<div class="item-info">' +
-                      '<a href="/news/' + data[i].newsId + '">' +
-                          '<h3>' + data[i].title + '</h3></a>' +
-                      '<p>Author: ' + data[i].createdBy.username + '</p>' +
-                    '</div>' +
-                  '</div>' +
-                '</div>' +
-              '</div>');
+              '<div class="col-1-3">'
+                + '<div class="wrap-col">'
+                  + '<div class="item t-center">'
+                    + '<div class="item-info">'
+                      + '<a href="/news/' + data[i].newsId + '">'
+                          + '<h3>' + data[i].title + '</h3></a>'
+                      + '<p>Author: ' + data[i].createdBy.username + '</p>'
+                    + '</div>'
+                  + '</div>'
+                + '</div>'
+              + '</div>');
         }
       }
     },

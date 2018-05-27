@@ -40,6 +40,7 @@
 										<th class=" filterable sortable table-sortable:numeric"
 											onclick="set_data_and_load('categoryName', '')">
 											Name</th>
+										<th>Action</th>
 									</tr>
 									</thead>
 								</table>
@@ -55,6 +56,6 @@
 		<img src="/images/arrow_down_40.png">
 	</button>
 
-	<script src="/js/administration/categories.js"></script>
+	<script src="/js/editor/categories.js"></script>
 
 	<jsp:include page="../footer.jsp" />

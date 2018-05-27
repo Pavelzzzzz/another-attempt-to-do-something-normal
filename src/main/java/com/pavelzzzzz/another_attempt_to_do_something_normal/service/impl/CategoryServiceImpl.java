@@ -38,9 +38,10 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public int save(Category category) {
-        return tblAPLCategoryEntityDao.save(
-            categoryDao.fromEntity(category)).getCategoryId();
+    public Category save(Category category) {
+        return categoryDao.toEntity(
+            tblAPLCategoryEntityDao.save(
+                categoryDao.fromEntity(category)));
     }
 
     @Override

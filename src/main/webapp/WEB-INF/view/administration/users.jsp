@@ -16,15 +16,22 @@
 								<table id="tableOfUsers">
 									<thead>
 									<tr class="t-center">
-										<th class=" filterable sortable table-sortable:numeric"
+										<th class= "filterable sortable table-sortable:numeric"
 											onclick="set_data_and_load('username', '')">
 											Username</th>
-										<th class=" filterable sortable table-sortable:numeric"
+										<th class= "filterable sortable table-sortable:numeric"
 											onclick="set_data_and_load('email', '')">
 											Email</th>
-										<th class=" filterable sortable table-sortable:numeric"
+										<th class= "filterable sortable table-sortable:numeric"
 											onclick="set_data_and_load('enabled', '')">
 											Enabled</th>
+										<th class="filterable sortable table-sortable:numeric"
+											onclick="set_data_and_load('listRoleEntity.roleId', '')">
+											Admin</th>
+										<th class="filterable sortable table-sortable:numeric"
+											onclick="set_data_and_load('listRoleEntity.roleId', 'desc')">
+											User</th>
+										<th>Action</th>
 									</tr>
 									</thead>
 								</table>

@@ -1,8 +1,8 @@
 package com.pavelzzzzz.another_attempt_to_do_something_normal.controller;
 
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblSECUserEntity;
-import com.pavelzzzzz.another_attempt_to_do_something_normal.security.impl.UserSecurityService;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.UserService;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.User;
 import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -13,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -21,8 +23,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private UserSecurityService userSecurityService;
 
     @GetMapping
     public ResponseEntity<?> findAllUser(
@@ -30,8 +30,15 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll(predicate, pageable));
     }
 
+    @PostMapping("/{id}")
+    public ResponseEntity<?> updateUser(
+        @RequestBody User user){
+        return new ResponseEntity<User>(userService.update(user), HttpStatus.OK);
+    }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable("id") int id) {
+    public ResponseEntity<Void> deleteUser(
+        @PathVariable("id") int id) {
         userService.delete(id);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }

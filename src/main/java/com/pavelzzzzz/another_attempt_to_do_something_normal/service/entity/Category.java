@@ -2,7 +2,7 @@ package com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity;
 
 public class Category {
 
-    private int categoryId;
+    private Integer categoryId;
 
     private String categoryName;
 
@@ -14,11 +14,11 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public int getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 
