@@ -61,14 +61,4 @@ public class UserServiceImpl implements UserService {
     public void delete(int userId) {
         tblSECUserEntityDao.deleteById(userId);
     }
-
-    //    @Override
-//    public void updateUser(UserEntity userEntity) {
-//        userDAO.updateUser(userEntity);
-//    }
-//
-//    @Override
-//    public void deleteUser(int userId) {
-//        userDAO.deleteUser(userId);
-//    }
 }

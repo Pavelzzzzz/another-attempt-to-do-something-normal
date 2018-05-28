@@ -1,4 +1,5 @@
 
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 	<jsp:include page="header.jsp" />
 
 	<title>${news.getTitle()}</title>
@@ -27,6 +28,14 @@
 									</div>
 								</div>
 							</div>
+							<sec:authorize access="hasRole('User') or hasRole('Admin')">
+								<div class="col-1-2">
+									<a class="button bt1" href="/editor/news_editor/${news.getNewsId()}">Update</a>
+								</div>
+								<div class="col-1-2">
+									<a class="button bt1" onclick="delete_news_by_id(${news.getNewsId()})">Delete</a>
+								</div>
+							</sec:authorize>
 						</div>
 					</div>
 					<div class="row">
@@ -44,5 +53,7 @@
 			</div>
 		</div>
 	</section>
+
+	<script src="/js/news.js"></script>
 
 	<jsp:include page="footer.jsp" />

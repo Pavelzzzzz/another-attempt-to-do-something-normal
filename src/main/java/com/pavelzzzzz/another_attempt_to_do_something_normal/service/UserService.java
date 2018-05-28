@@ -18,7 +18,4 @@ public interface UserService {
 
   void delete(int userId);
 
-//    void updateUser(UserEntity userEntity);
-//
-
 }

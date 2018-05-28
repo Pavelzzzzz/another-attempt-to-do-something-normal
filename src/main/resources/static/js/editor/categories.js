@@ -75,10 +75,10 @@ function get_categories() {
               + '<td>' + data[i].categoryId + '</td>'
               + '<td> <input class="input-categoryName" value="' + data[i].categoryName + '"></td>'
               + '<td>'
-              +   '<button class="button-category-update" '
+              +   '<button class="button-update" '
               +     'onclick="update_category_by_id(' + data[i].categoryId + ')">'
               +       '<img src="/images/save_16x16.png">'
-              +   '<button class="button-category-delete" '
+              +   '<button class="button-delete" '
               +     'onclick="delete_category_by_id(' + data[i].categoryId + ')">'
               +       '<img src="/images/trash_empty_16x16.png">'
               +   '</button>'
@@ -98,7 +98,7 @@ function clearTable(table) {
   while (table.getElementsByTagName('tr').length > 1){
     table.deleteRow(1);
   }
-  
+
 }
 
 function save_category() {

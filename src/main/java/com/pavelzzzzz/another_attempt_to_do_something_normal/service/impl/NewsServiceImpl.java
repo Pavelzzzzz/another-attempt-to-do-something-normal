@@ -6,6 +6,7 @@ import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblDE
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblSECUserEntityDao;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.dao.TblSERLanguageEntityDao;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblAPLNewsEntity;
+import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblDESTextTranslationEntity;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.hibernate.tables.TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.NewsService;
 import com.pavelzzzzz.another_attempt_to_do_something_normal.service.entity.News;
@@ -43,6 +44,8 @@ public class NewsServiceImpl implements NewsService {
   private Transformer codeToTextTransformer;
   @Autowired
   private Transformer textToCodeTransformer;
+  @Autowired
+  private Transformer deleteTextTranslationEntityTransformer;
 
   @Override
   public News getNewsByNewsIdAndLanguageId(int newsId, int languageId) {
@@ -83,6 +86,47 @@ public class NewsServiceImpl implements NewsService {
 
     int newsId = tblAPLNewsEntityDao.save(tblAPLNewsEntity).getNewsId();
     return newsId;
+  }
+
+  @Override
+  public int update(int newsId, int languageId, int categoryId, String title, String htmlText) {
+    TblAPLNewsEntity tblAPLNewsEntity =
+        tblAPLNewsEntityDao.getByNewsId(newsId);
+
+    TblDESTextTranslationEntity titleEntity = tblDESTextTranslationEntityDao
+        .getByPrimaryKeyTextIdLanguageId(
+            new TblDESTextTranslationEntityPrimaryKeyTextIdLanguageId(
+                tblAPLNewsEntity.getTitleId(), languageId));
+    titleEntity.setTextTranslation(title);
+    tblDESTextTranslationEntityDao.save(titleEntity);
+
+    Document html = Jsoup.parse(tblAPLNewsEntity.getHtmlArchitecture());
+    transformHtmlElement(html.body(), languageId, deleteTextTranslationEntityTransformer);
+
+    html = Jsoup.parse(htmlText);
+    transformHtmlElement(html.body() ,languageId, textToCodeTransformer);
+
+    tblAPLNewsEntity.setTblAPICategoryEntity(tblAPLCategoryEntityDao.getByCategoryId(categoryId));
+    tblAPLNewsEntity.setHtmlArchitecture(html.body().outerHtml());
+
+    return tblAPLNewsEntityDao.save(tblAPLNewsEntity).getNewsId();
+  }
+
+  @Override
+  public void delete(int newsId) {
+    TblAPLNewsEntity tblAPLNewsEntity =
+        tblAPLNewsEntityDao.getByNewsId(newsId);
+
+    for (TblDESTextTranslationEntity tblDESTextTranslationEntity:
+        tblDESTextTranslationEntityDao.findAllByPrimaryKeyTextIdLanguageIdTextId(
+            tblAPLNewsEntity.getTitleId())){
+      tblDESTextTranslationEntityDao.delete(tblDESTextTranslationEntity);
+    }
+
+    Document html = Jsoup.parse(tblAPLNewsEntity.getHtmlArchitecture());
+    transformHtmlElement(html.body(), -1, deleteTextTranslationEntityTransformer);
+
+    tblAPLNewsEntityDao.delete(tblAPLNewsEntity);
   }
 
   private void transformHtmlElement(Element element, int languageId, Transformer transformer) {

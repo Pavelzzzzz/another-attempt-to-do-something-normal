@@ -16,29 +16,6 @@
 							</select>
 						</div>
 					</div>
-					<%--<div class="col-1-4">--%>
-					<%--<div class="wrap-col">--%>
-					<%--<span>Modal :</span><br/>--%>
-					<%--<select>--%>
-					<%--<option>--ALL--</option>--%>
-					<%--<option>Aston martin</option>--%>
-					<%--<option>Audi</option>--%>
-					<%--<option>Bentley</option>--%>
-					<%--<option>Bmw</option>--%>
-					<%--<option>Cadillac</option>--%>
-					<%--<option>Chevrolet</option>--%>
-					<%--<option>Citroen</option>--%>
-					<%--<option>Dacia</option>--%>
-					<%--<option>Dodge</option>--%>
-					<%--<option>Ferrari</option>--%>
-					<%--<option>Ford</option>--%>
-					<%--<option>Gmc</option>--%>
-					<%--<option>Hyundai</option>--%>
-					<%--<option>Jaguar</option>--%>
-					<%--<option>Lexus</option>--%>
-					<%--</select>--%>
-					<%--</div>--%>
-					<%--</div>--%>
 					<div class="col-1-2">
 						<div class="wrap-col">
 							<br>

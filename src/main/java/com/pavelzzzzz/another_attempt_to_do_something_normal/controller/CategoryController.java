@@ -41,7 +41,7 @@ public class CategoryController {
   }
 
   @PostMapping("/{id}")
-  public ResponseEntity<?> updateUser(
+  public ResponseEntity<?> updateCategory(
       @RequestBody Category category){
     return new ResponseEntity<Category>(categoryService.save(category), HttpStatus.OK);
   }

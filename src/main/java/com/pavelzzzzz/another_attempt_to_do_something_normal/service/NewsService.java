@@ -8,4 +8,9 @@ public interface NewsService {
 
   int save(int languageId, int categoryId,
                int userId, String title, String htmlText);
+
+  int update(int newsId, int languageId,
+      int categoryId, String title, String htmlText);
+
+  void delete(int newsId);
 }
