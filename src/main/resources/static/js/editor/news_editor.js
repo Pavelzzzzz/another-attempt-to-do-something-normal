@@ -54,6 +54,7 @@ function save_news() {
         dataType: 'json',
         success: function (data) {
           console.log("news " + data + " saved");
+          window.location.replace("/news/" + data);
         },
         error: function (error) {
             console.log("Error: " + error.status);
@@ -81,6 +82,7 @@ function update_news() {
     dataType: 'json',
     success: function (data) {
       console.log("news " + data + " updated");
+      window.location.replace("/news/" + data);
     },
     error: function (error) {
       console.log("Error: " + error.status);

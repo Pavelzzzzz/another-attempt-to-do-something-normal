@@ -16,6 +16,7 @@ public class CodeToTextTransformer implements Transformer {
 
     @Override
     public String transform(String code, int languageId) {
+        code = code.replaceAll(" ", "");
         if (code.startsWith("/~") &&
             code.endsWith("~/")) {
             int textElementId =
