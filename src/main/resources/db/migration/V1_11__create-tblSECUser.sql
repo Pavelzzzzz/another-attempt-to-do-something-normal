@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS tblSECUser (
+  `UserId` INT NOT NULL AUTO_INCREMENT,
+  `Username` VARCHAR(256) NOT NULL,
+  `Email` VARCHAR(256),
+  `Enabled` TINYINT(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`UserId`),
+  UNIQUE INDEX `Username_UNIQUE` (`Username` ASC));
