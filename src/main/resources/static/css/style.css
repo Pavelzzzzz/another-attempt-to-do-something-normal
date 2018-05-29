@@ -57,7 +57,7 @@ p{margin: 10px 0;}
 .clear{content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
 .clearfix:after, .clearfix:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
 
-.bg-theme{background: #2D88CF;}
+.bg-theme{background: #000000;}
 /* ---------------------------------------------------------------------------- */
 /* ------------------------------------Html-Body------------------------------- */
 /* ---------------------------------------------------------------------------- */
@@ -128,10 +128,11 @@ article .art-content{}
 .widget ul li { line-height: 2.8;border-bottom: 2px solid #DDD;}
 .widget:after, .widget:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
 
-.widget .wid-header, .registration-header {background-color: #2D88CF;padding: 15px 20px; margin: 10px 0 30px}
+.widget .wid-header, .registration-header {background-color: rgba(0, 0, 0, 0.6);padding: 15px 20px; margin: 10px 0 30px}
 .widget .wid-header h5, .registration-header h5 {font-size: 17px;color: #fff;text-transform: uppercase;}
 .widget .wid-content{padding: 20px;background-color: #fff;}
-.widget .wid-header-information {background-color: #2D88CF; padding: 10px 15px; margin: 10px 0}
+.widget .wid-header-information {background-color: rgba(0, 0, 0, 0.6); padding: 10px 15px; margin: 10px 0}
+.widget .wid-header-information h6{color: white}
 .widget .wid-content-information{padding: 5px; background-color: #fff;}
 .news-header{padding: 40px}
 
@@ -170,11 +171,21 @@ a.button.bt1 {background: #434343;
     text-align: center;
     border:1px solid #474747;
 }
-a.button.bt2 {background: #0000ff;color: #ffffff;}
+a.button.bt2 {background: rgba(0, 0, 0, 0.6);color: #ffffff;}
 
 .button-update, .button-delete{
   margin: 0 5px;
 }
+
+.btn-primary{
+    background-color: rgba(0,0,0,0.6);
+    border-color: rgba(0,0,0,0.6);
+}
+
+.btn-primary:hover {
+    background-color: #000000;
+}
+
 /* ---------------------------------------------------------------------------- */
 /* -------------------------------------Contact-------------------------------- */
 /* ---------------------------------------------------------------------------- */
@@ -393,7 +404,7 @@ a.button.bt2 {background: #0000ff;color: #ffffff;}
   text-transform: uppercase;
 }
 #cssmenu > ul > li:hover > a {
-  background: #2672AD;
+  background: rgba(0, 0, 0, 0.6);
 } 
 #cssmenu ul ul {
   position: absolute;

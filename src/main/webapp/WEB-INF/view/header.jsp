@@ -20,6 +20,7 @@
   ================================================== -->
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/zerogrid.css">
+	<link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
 
 </head>
 

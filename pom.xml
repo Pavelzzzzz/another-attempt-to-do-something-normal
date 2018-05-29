@@ -23,7 +23,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <!--<start-class>com.pavelzzzzz.another_attempt_to_do_something_normal.AnotherAttemptToDoSomethingNormalApplication</start-class>-->
+    <!--<start-class>AnotherAttemptToDoSomethingNormalApplication</start-class>-->
     <java.version>1.8</java.version>
   </properties>
 
