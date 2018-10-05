@@ -6,7 +6,7 @@
   <groupId>com.pavelzzzzz</groupId>
   	<artifactId>another-attempt-to-do-something-normal</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
-  	<packaging>pom</packaging>
+  	<packaging>jar</packaging>
 
   	<name>another-attempt-to-do-something-normal</name>
   	<description>Demo project for Spring Boot</description>
@@ -163,6 +163,34 @@
               <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
               <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
             </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <!-- This plugin is used to create a docker image and publish the image to docker hub-->
+      <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>dockerfile-maven-plugin</artifactId>
+        <version>1.4.0</version>
+        <configuration>
+          <repository>pavelzzzzz/another-attempt-to-do-something-normal</repository>
+          <tag>${project.version}</tag>
+          <buildArgs>
+            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+          </buildArgs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>default</id>
+            <phase>install</phase>
+            <goals>
+              <goal>build</goal>
+              <!--<goal>push</goal>-->
+            </goals>
           </execution>
         </executions>
       </plugin>
