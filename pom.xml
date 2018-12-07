@@ -23,6 +23,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <io.springfox.version>2.9.2</io.springfox.version>
     <!--<start-class>com.pavelzzzzz.another_attempt_to_do_something_normal.AnotherAttemptToDoSomethingNormalApplication</start-class>-->
     <java.version>1.8</java.version>
   </properties>
@@ -53,6 +54,20 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>${io.springfox.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <version>${io.springfox.version}</version>
+      <scope>compile</scope>
     </dependency>
 
     <!-- for tests -->
